@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265F0C4890C05B32FBE1721C /* libPods-RemindToStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE4C267658231E28DE0D918 /* libPods-RemindToStudy.a */; };
 		FD0F885F1AE424490068B03A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F885E1AE424490068B03A /* main.m */; };
 		FD0F88621AE424490068B03A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88611AE424490068B03A /* AppDelegate.m */; };
-		FD0F88651AE424490068B03A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88641AE424490068B03A /* ViewController.m */; };
 		FD0F88681AE424490068B03A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0F88661AE424490068B03A /* Main.storyboard */; };
 		FD0F886A1AE424490068B03A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0F88691AE424490068B03A /* Images.xcassets */; };
 		FD0F886D1AE424490068B03A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD0F886B1AE424490068B03A /* LaunchScreen.xib */; };
 		FD0F88791AE424490068B03A /* RemindToStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88781AE424490068B03A /* RemindToStudyTests.m */; };
+		FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88871AE424DA0068B03A /* CardListViewController.m */; };
+		FD0F888B1AE425220068B03A /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F888A1AE425220068B03A /* CardViewController.m */; };
+		FD0F888E1AE425E40068B03A /* RemindToStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD0F888C1AE425E40068B03A /* RemindToStudy.xcdatamodeld */; };
+		FD0F88A71AE429060068B03A /* AddGoalPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88A51AE429060068B03A /* AddGoalPopup.m */; };
+		FD0F88AC1AE429180068B03A /* EditGoalPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AA1AE429180068B03A /* EditGoalPopup.m */; };
+		FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */; };
+		FD0F88BC1AE42B440068B03A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BB1AE42B440068B03A /* QuartzCore.framework */; };
+		FD0F88BE1AE42B480068B03A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BD1AE42B480068B03A /* Accelerate.framework */; };
+		FD0F88C01AE42B4D0068B03A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BF1AE42B4D0068B03A /* UIKit.framework */; };
+		FD0F88C21AE42B560068B03A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88C11AE42B560068B03A /* Foundation.framework */; };
+		FD0F88C41AE42B5B0068B03A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88C31AE42B5B0068B03A /* CoreData.framework */; };
+		FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */; };
+		FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */; };
+		FD0F88CF1AE42D5E0068B03A /* CardAdderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88CE1AE42D5E0068B03A /* CardAdderImplementation.m */; };
+		FD0F88D81AE42E250068B03A /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88D71AE42E250068B03A /* TextCardViewer.m */; };
+		FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88DA1AE42E460068B03A /* TextCardEditor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +43,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E5E81804DE582639E861563 /* Pods-RemindToStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindToStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindToStudy/Pods-RemindToStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		6FE4C267658231E28DE0D918 /* libPods-RemindToStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RemindToStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9F000E1FB55B3C738E80D8 /* Pods-RemindToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindToStudy/Pods-RemindToStudy.release.xcconfig"; sourceTree = "<group>"; };
 		FD0F88591AE424490068B03A /* RemindToStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindToStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0F885D1AE424490068B03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0F885E1AE424490068B03A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD0F88601AE424490068B03A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD0F88611AE424490068B03A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FD0F88631AE424490068B03A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FD0F88641AE424490068B03A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FD0F88671AE424490068B03A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD0F88691AE424490068B03A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD0F886C1AE424490068B03A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FD0F88721AE424490068B03A /* RemindToStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindToStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0F88771AE424490068B03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0F88781AE424490068B03A /* RemindToStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemindToStudyTests.m; sourceTree = "<group>"; };
+		FD0F88861AE424DA0068B03A /* CardListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardListViewController.h; sourceTree = "<group>"; };
+		FD0F88871AE424DA0068B03A /* CardListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardListViewController.m; sourceTree = "<group>"; };
+		FD0F88891AE425220068B03A /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		FD0F888A1AE425220068B03A /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		FD0F888D1AE425E40068B03A /* RemindToStudy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindToStudy.xcdatamodel; sourceTree = "<group>"; };
+		FD0F88A41AE429060068B03A /* AddGoalPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGoalPopup.h; sourceTree = "<group>"; };
+		FD0F88A51AE429060068B03A /* AddGoalPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGoalPopup.m; sourceTree = "<group>"; };
+		FD0F88A91AE429180068B03A /* EditGoalPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditGoalPopup.h; sourceTree = "<group>"; };
+		FD0F88AA1AE429180068B03A /* EditGoalPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditGoalPopup.m; sourceTree = "<group>"; };
+		FD0F88AE1AE429420068B03A /* SetNotificationDatePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNotificationDatePopup.h; sourceTree = "<group>"; };
+		FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNotificationDatePopup.m; sourceTree = "<group>"; };
+		FD0F88B61AE429A60068B03A /* CardSaver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSaver.h; sourceTree = "<group>"; };
+		FD0F88B71AE429B50068B03A /* CardLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardLoader.h; sourceTree = "<group>"; };
+		FD0F88B81AE429CB0068B03A /* CardEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardEditor.h; path = ../model/CardEditor.h; sourceTree = "<group>"; };
+		FD0F88B91AE429FF0068B03A /* CardAdder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardAdder.h; sourceTree = "<group>"; };
+		FD0F88BA1AE42A2D0068B03A /* CardViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardViewer.h; sourceTree = "<group>"; };
+		FD0F88BB1AE42B440068B03A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FD0F88BD1AE42B480068B03A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FD0F88BF1AE42B4D0068B03A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FD0F88C11AE42B560068B03A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD0F88C31AE42B5B0068B03A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FD0F88C71AE42D370068B03A /* CardSaverImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSaverImplementation.h; sourceTree = "<group>"; };
+		FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSaverImplementation.m; sourceTree = "<group>"; };
+		FD0F88CA1AE42D4F0068B03A /* CardLoaderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardLoaderImplementation.h; sourceTree = "<group>"; };
+		FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardLoaderImplementation.m; sourceTree = "<group>"; };
+		FD0F88CD1AE42D5E0068B03A /* CardAdderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAdderImplementation.h; sourceTree = "<group>"; };
+		FD0F88CE1AE42D5E0068B03A /* CardAdderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAdderImplementation.m; sourceTree = "<group>"; };
+		FD0F88D61AE42E250068B03A /* TextCardViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardViewer.h; sourceTree = "<group>"; };
+		FD0F88D71AE42E250068B03A /* TextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardViewer.m; sourceTree = "<group>"; };
+		FD0F88D91AE42E460068B03A /* TextCardEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardEditor.h; sourceTree = "<group>"; };
+		FD0F88DA1AE42E460068B03A /* TextCardEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardEditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +95,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0F88C41AE42B5B0068B03A /* CoreData.framework in Frameworks */,
+				FD0F88C21AE42B560068B03A /* Foundation.framework in Frameworks */,
+				FD0F88C01AE42B4D0068B03A /* UIKit.framework in Frameworks */,
+				FD0F88BE1AE42B480068B03A /* Accelerate.framework in Frameworks */,
+				FD0F88BC1AE42B440068B03A /* QuartzCore.framework in Frameworks */,
+				265F0C4890C05B32FBE1721C /* libPods-RemindToStudy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +114,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094232D2B91E564DDC4CB76A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E5E81804DE582639E861563 /* Pods-RemindToStudy.debug.xcconfig */,
+				AD9F000E1FB55B3C738E80D8 /* Pods-RemindToStudy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B918A6990226787B4758D4E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FE4C267658231E28DE0D918 /* libPods-RemindToStudy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD0F88501AE424490068B03A = {
 			isa = PBXGroup;
 			children = (
 				FD0F885B1AE424490068B03A /* RemindToStudy */,
 				FD0F88751AE424490068B03A /* RemindToStudyTests */,
 				FD0F885A1AE424490068B03A /* Products */,
+				094232D2B91E564DDC4CB76A /* Pods */,
+				B918A6990226787B4758D4E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +154,12 @@
 		FD0F885B1AE424490068B03A /* RemindToStudy */ = {
 			isa = PBXGroup;
 			children = (
+				FD0F88C51AE42B630068B03A /* frameworks */,
+				FD0F88821AE424C30068B03A /* controller */,
+				FD0F88831AE424C30068B03A /* model */,
+				FD0F88851AE424C30068B03A /* view */,
 				FD0F88601AE424490068B03A /* AppDelegate.h */,
 				FD0F88611AE424490068B03A /* AppDelegate.m */,
-				FD0F88631AE424490068B03A /* ViewController.h */,
-				FD0F88641AE424490068B03A /* ViewController.m */,
 				FD0F88661AE424490068B03A /* Main.storyboard */,
 				FD0F88691AE424490068B03A /* Images.xcassets */,
 				FD0F886B1AE424490068B03A /* LaunchScreen.xib */,
@@ -119,6 +194,105 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FD0F88821AE424C30068B03A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88861AE424DA0068B03A /* CardListViewController.h */,
+				FD0F88871AE424DA0068B03A /* CardListViewController.m */,
+				FD0F88891AE425220068B03A /* CardViewController.h */,
+				FD0F888A1AE425220068B03A /* CardViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FD0F88831AE424C30068B03A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88C61AE42CF30068B03A /* implementations */,
+				FD0F88841AE424C30068B03A /* entities */,
+				FD0F888C1AE425E40068B03A /* RemindToStudy.xcdatamodeld */,
+				FD0F88B61AE429A60068B03A /* CardSaver.h */,
+				FD0F88B71AE429B50068B03A /* CardLoader.h */,
+				FD0F88B91AE429FF0068B03A /* CardAdder.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FD0F88841AE424C30068B03A /* entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		FD0F88851AE424C30068B03A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88D01AE42DF10068B03A /* Implementations */,
+				FD0F88B81AE429CB0068B03A /* CardEditor.h */,
+				FD0F88A41AE429060068B03A /* AddGoalPopup.h */,
+				FD0F88A51AE429060068B03A /* AddGoalPopup.m */,
+				FD0F88A91AE429180068B03A /* EditGoalPopup.h */,
+				FD0F88AA1AE429180068B03A /* EditGoalPopup.m */,
+				FD0F88AE1AE429420068B03A /* SetNotificationDatePopup.h */,
+				FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */,
+				FD0F88BA1AE42A2D0068B03A /* CardViewer.h */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		FD0F88C51AE42B630068B03A /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88C31AE42B5B0068B03A /* CoreData.framework */,
+				FD0F88C11AE42B560068B03A /* Foundation.framework */,
+				FD0F88BF1AE42B4D0068B03A /* UIKit.framework */,
+				FD0F88BD1AE42B480068B03A /* Accelerate.framework */,
+				FD0F88BB1AE42B440068B03A /* QuartzCore.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		FD0F88C61AE42CF30068B03A /* implementations */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88C71AE42D370068B03A /* CardSaverImplementation.h */,
+				FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */,
+				FD0F88CA1AE42D4F0068B03A /* CardLoaderImplementation.h */,
+				FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */,
+				FD0F88CD1AE42D5E0068B03A /* CardAdderImplementation.h */,
+				FD0F88CE1AE42D5E0068B03A /* CardAdderImplementation.m */,
+			);
+			path = implementations;
+			sourceTree = "<group>";
+		};
+		FD0F88D01AE42DF10068B03A /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88D41AE42E250068B03A /* editors */,
+				FD0F88D51AE42E250068B03A /* viewers */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		FD0F88D41AE42E250068B03A /* editors */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88D91AE42E460068B03A /* TextCardEditor.h */,
+				FD0F88DA1AE42E460068B03A /* TextCardEditor.m */,
+			);
+			path = editors;
+			sourceTree = "<group>";
+		};
+		FD0F88D51AE42E250068B03A /* viewers */ = {
+			isa = PBXGroup;
+			children = (
+				FD0F88D61AE42E250068B03A /* TextCardViewer.h */,
+				FD0F88D71AE42E250068B03A /* TextCardViewer.m */,
+			);
+			path = viewers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD0F887C1AE424490068B03A /* Build configuration list for PBXNativeTarget "RemindToStudy" */;
 			buildPhases = (
+				3871D2309C10EFFEA5673D7B /* Check Pods Manifest.lock */,
 				FD0F88551AE424490068B03A /* Sources */,
 				FD0F88561AE424490068B03A /* Frameworks */,
 				FD0F88571AE424490068B03A /* Resources */,
+				B0AEB96DADBD8DA728422304 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,13 +390,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3871D2309C10EFFEA5673D7B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B0AEB96DADBD8DA728422304 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindToStudy/Pods-RemindToStudy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD0F88551AE424490068B03A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD0F88651AE424490068B03A /* ViewController.m in Sources */,
+				FD0F88A71AE429060068B03A /* AddGoalPopup.m in Sources */,
+				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
+				FD0F88CF1AE42D5E0068B03A /* CardAdderImplementation.m in Sources */,
+				FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */,
+				FD0F88AC1AE429180068B03A /* EditGoalPopup.m in Sources */,
+				FD0F888B1AE425220068B03A /* CardViewController.m in Sources */,
+				FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */,
+				FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */,
 				FD0F88621AE424490068B03A /* AppDelegate.m in Sources */,
+				FD0F88D81AE42E250068B03A /* TextCardViewer.m in Sources */,
+				FD0F888E1AE425E40068B03A /* RemindToStudy.xcdatamodeld in Sources */,
+				FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */,
 				FD0F885F1AE424490068B03A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,9 +560,11 @@
 		};
 		FD0F887D1AE424490068B03A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E5E81804DE582639E861563 /* Pods-RemindToStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RemindToStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,9 +572,11 @@
 		};
 		FD0F887E1AE424490068B03A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9F000E1FB55B3C738E80D8 /* Pods-RemindToStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RemindToStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +635,7 @@
 				FD0F887E1AE424490068B03A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD0F887F1AE424490068B03A /* Build configuration list for PBXNativeTarget "RemindToStudyTests" */ = {
 			isa = XCConfigurationList;
@@ -420,8 +644,22 @@
 				FD0F88811AE424490068B03A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FD0F888C1AE425E40068B03A /* RemindToStudy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FD0F888D1AE425E40068B03A /* RemindToStudy.xcdatamodel */,
+			);
+			currentVersion = FD0F888D1AE425E40068B03A /* RemindToStudy.xcdatamodel */;
+			path = RemindToStudy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FD0F88511AE424490068B03A /* Project object */;
 }

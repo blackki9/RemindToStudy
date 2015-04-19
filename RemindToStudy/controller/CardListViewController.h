@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CardListViewController.h
 //  RemindToStudy
 //
 //  Created by black9 on 19/04/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CardListViewController : UIViewController
 
 @end
-
