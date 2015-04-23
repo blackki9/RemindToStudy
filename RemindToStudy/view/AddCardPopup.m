@@ -32,19 +32,15 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - setup UI
+
 - (void)updateUI
 {
     [self.adder showAddUIInView:self.contentView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - adding
 - (IBAction)addCard:(id)sender {
- 
-    
     NSDictionary* cardInfo = [self.adder collectInfoWithDelegate:self];
     [self.adder addCardWithInfo:cardInfo delegate:self];
     if(self.finishHandler) {
@@ -53,6 +49,7 @@
     [self hidePopup];
 }
 
+#pragma mark - hiding
 - (IBAction)cancel:(id)sender {
     self.finishHandler(NO);
     [self hidePopup];
@@ -60,9 +57,7 @@
 
 - (void)hidePopup
 {
-    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:^(MZFormSheetController *formSheetController) {
-        
-    }];
+    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
 }
 
 #pragma mark - CardAdderDelegate
