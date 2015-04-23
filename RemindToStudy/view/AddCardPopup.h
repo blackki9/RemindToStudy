@@ -22,6 +22,6 @@ typedef void (^CardAddFinishHandler) (BOOL result);
 @property (nonatomic, strong) id<CardSaver> saver; // should be passed here
 @property (nonatomic, strong) GroupCard* groupCard;
 @property (nonatomic, strong) CardAddFinishHandler finishHandler;
-- (void)updateUI;
+- (void)updateUIWithCurrentAdder;
 
 @end

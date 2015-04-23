@@ -34,7 +34,7 @@
 
 #pragma mark - setup UI
 
-- (void)updateUI
+- (void)updateUIWithCurrentAdder
 {
     [self.adder showAddUIInView:self.contentView];
 }
@@ -51,7 +51,10 @@
 
 #pragma mark - hiding
 - (IBAction)cancel:(id)sender {
-    self.finishHandler(NO);
+    if(self.finishHandler) {
+        self.finishHandler(NO);
+    }
+
     [self hidePopup];
 }
 

@@ -15,7 +15,7 @@ NSString* const kCardDescriptionKey = @"cardDescription";
 NSString* const kCardNameKey = @"cardName";
 //TODO add other cards keys
 
-@implementation CardsFactory
+@implementation CardsFactory                                                                                                                                                                                                                                       
 
 + (Card*)cardForClass:(Class)cardClass info:(NSDictionary*)info
 {
