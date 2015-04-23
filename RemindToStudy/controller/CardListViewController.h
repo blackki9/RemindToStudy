@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iCarousel.h"
+#import <MZFormSheetController.h>
 
-@interface CardListViewController : UIViewController
+@interface CardListViewController : MZFormSheetController <iCarouselDelegate, iCarouselDataSource>
 
 @end

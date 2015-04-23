@@ -9,10 +9,11 @@
 #ifndef RemindToStudy_GoalSaver_h
 #define RemindToStudy_GoalSaver_h
 
+@class Card;
 
 @protocol CardSaver <NSObject>
 
-
+- (void)saveCard:(Card*)card;
 
 @end
 

@@ -7,7 +7,13 @@
 //
 
 #import "CardSaverImplementation.h"
+#import "DBManager.h"
 
 @implementation CardSaverImplementation
+
+- (void)saveCard:(Card *)card
+{
+    [[DBManager sharedManager] saveContext];
+}
 
 @end

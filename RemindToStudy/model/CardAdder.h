@@ -9,8 +9,21 @@
 #ifndef RemindToStudy_CardAdder_h
 #define RemindToStudy_CardAdder_h
 
+@import UIKit;
+
+@protocol CardAdderDelegate <NSObject>
+
+- (void)cardSubmittedWithInfo:(NSDictionary*)info class:(Class)cardClass;
+- (NSString*)cardName;
+
+@end
+
 @protocol CardAdder <NSObject>
 
+- (void)showAddUIInView:(UIView*)parentView;
+- (NSDictionary*)collectInfoWithDelegate:(id<CardAdderDelegate>)delegate;
+
+- (void)addCardWithInfo:(NSDictionary*)cardInfo delegate:(id<CardAdderDelegate>)delegate;
 
 @end
 

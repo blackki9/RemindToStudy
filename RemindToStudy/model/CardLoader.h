@@ -8,9 +8,11 @@
 
 #ifndef RemindToStudy_CardLoader_h
 #define RemindToStudy_CardLoader_h
+@class GroupCard;
 
 @protocol CardLoader <NSObject>
 
+- (GroupCard*)loadBaseList;
 
 @end
 

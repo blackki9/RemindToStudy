@@ -5,13 +5,20 @@
     </entity>
     <entity name="Card" representedClassName="Card" isAbstract="YES" syncable="YES">
         <attribute name="cardDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="groupCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroupCard" inverseName="cards" inverseEntity="GroupCard" syncable="YES"/>
         <relationship name="notification" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notification" inverseName="card" inverseEntity="Notification" syncable="YES"/>
+    </entity>
+    <entity name="GroupCard" representedClassName="GroupCard" parentEntity="Card" syncable="YES">
+        <attribute name="levelIndex" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="groupCards" inverseEntity="Card" syncable="YES"/>
     </entity>
     <entity name="LinkCard" representedClassName="LinkCard" parentEntity="Card" syncable="YES">
         <attribute name="urlLink" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Notification" representedClassName="Notification" syncable="YES">
         <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="notificationId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="notification" inverseEntity="Card" syncable="YES"/>
     </entity>
@@ -25,12 +32,13 @@
         <attribute name="filePath" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-3215" positionY="-2700" width="128" height="73"/>
-        <element name="Notification" positionX="-3330" positionY="-2466" width="128" height="88"/>
+        <element name="AudioCard" positionX="-3107" positionY="-2779" width="128" height="58"/>
+        <element name="Card" positionX="-3224" positionY="-2700" width="128" height="103"/>
+        <element name="LinkCard" positionX="-3267" positionY="-2808" width="128" height="58"/>
+        <element name="Notification" positionX="-3332" positionY="-2466" width="128" height="103"/>
+        <element name="PDFCard" positionX="-3404" positionY="-2736" width="128" height="58"/>
         <element name="TextCard" positionX="-3107" positionY="-2565" width="128" height="58"/>
         <element name="VideoCard" positionX="-3024" positionY="-2680" width="128" height="58"/>
-        <element name="AudioCard" positionX="-3107" positionY="-2779" width="128" height="58"/>
-        <element name="LinkCard" positionX="-3267" positionY="-2808" width="128" height="58"/>
-        <element name="PDFCard" positionX="-3404" positionY="-2736" width="128" height="58"/>
+        <element name="GroupCard" positionX="-3465" positionY="-2620" width="128" height="73"/>
     </elements>
 </model>
