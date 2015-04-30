@@ -29,10 +29,15 @@
 		FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */; };
 		FD0F88D81AE42E250068B03A /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88D71AE42E250068B03A /* TextCardViewer.m */; };
 		FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88DA1AE42E460068B03A /* TextCardEditor.m */; };
+		FD3EB9CE1AF27BDD00FA17EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3EB9C51AF27BDD00FA17EE /* Info.plist */; };
+		FD3EB9D11AF27BDD00FA17EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FD3EB9CC1AF27BDD00FA17EE /* LICENSE */; };
+		FD3EB9D21AF27BDD00FA17EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB9CD1AF27BDD00FA17EE /* README.md */; };
+		FD3EB9DB1AF27BEC00FA17EE /* BKNotificationCenterImp.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB9DA1AF27BEC00FA17EE /* BKNotificationCenterImp.m */; };
+		FD3EB9DE1AF2893400FA17EE /* BKNotificationCanceler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB9DD1AF2893400FA17EE /* BKNotificationCanceler.m */; };
+		FD3EB9E11AF28AF800FA17EE /* BKNotificationRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB9E01AF28AF800FA17EE /* BKNotificationRefresher.m */; };
+		FD3EB9E41AF28FDF00FA17EE /* BKNotificationScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB9E31AF28FDF00FA17EE /* BKNotificationScheduler.m */; };
+		FD3EB9E71AF2907800FA17EE /* BKNotificationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3EB9E61AF2907800FA17EE /* BKNotificationUtilities.m */; };
 		FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706B31AEE6AC700790B7D /* NotificationCenter.m */; };
-		FD7706C31AEE745A00790B7D /* BKNotificationCenterImp.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706BA1AEE745A00790B7D /* BKNotificationCenterImp.m */; };
-		FD7706C41AEE745A00790B7D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7706BB1AEE745A00790B7D /* Info.plist */; };
-		FD7706C51AEE745A00790B7D /* notification_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = FD7706BC1AEE745A00790B7D /* notification_sound.caf */; };
 		FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2811AE81392005A4F4B /* DBManager.m */; };
 		FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B41AE81657005A4F4B /* CardsFactory.m */; };
 		FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B81AE81E95005A4F4B /* AudioCard.m */; };
@@ -58,18 +63,18 @@
 			remoteGlobalIDString = FD0F88581AE424490068B03A;
 			remoteInfo = RemindToStudy;
 		};
-		FD7706CA1AEE745A00790B7D /* PBXContainerItemProxy */ = {
+		FD3EB9D51AF27BDD00FA17EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */;
+			containerPortal = FD3EB9C61AF27BDD00FA17EE /* BKNotificationCenter.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FD7706891AEBB22300790B7D;
+			remoteGlobalIDString = FD3EB9A31AF27B8200FA17EE;
 			remoteInfo = BKNotificationCenter;
 		};
-		FD7706CC1AEE745A00790B7D /* PBXContainerItemProxy */ = {
+		FD3EB9D71AF27BDD00FA17EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */;
+			containerPortal = FD3EB9C61AF27BDD00FA17EE /* BKNotificationCenter.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FD7706941AEBB22300790B7D;
+			remoteGlobalIDString = FD3EB9AE1AF27B8200FA17EE;
 			remoteInfo = BKNotificationCenterTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -118,14 +123,23 @@
 		FD0F88D71AE42E250068B03A /* TextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardViewer.m; sourceTree = "<group>"; };
 		FD0F88D91AE42E460068B03A /* TextCardEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardEditor.h; sourceTree = "<group>"; };
 		FD0F88DA1AE42E460068B03A /* TextCardEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardEditor.m; sourceTree = "<group>"; };
+		FD3EB9C31AF27BDD00FA17EE /* BKNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenter.h; sourceTree = "<group>"; };
+		FD3EB9C51AF27BDD00FA17EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD3EB9C61AF27BDD00FA17EE /* BKNotificationCenter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BKNotificationCenter.xcodeproj; sourceTree = "<group>"; };
+		FD3EB9CC1AF27BDD00FA17EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FD3EB9CD1AF27BDD00FA17EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FD3EB9D91AF27BEC00FA17EE /* BKNotificationCenterImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenterImp.h; sourceTree = "<group>"; };
+		FD3EB9DA1AF27BEC00FA17EE /* BKNotificationCenterImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCenterImp.m; sourceTree = "<group>"; };
+		FD3EB9DC1AF2893400FA17EE /* BKNotificationCanceler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCanceler.h; sourceTree = "<group>"; };
+		FD3EB9DD1AF2893400FA17EE /* BKNotificationCanceler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCanceler.m; sourceTree = "<group>"; };
+		FD3EB9DF1AF28AF800FA17EE /* BKNotificationRefresher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationRefresher.h; sourceTree = "<group>"; };
+		FD3EB9E01AF28AF800FA17EE /* BKNotificationRefresher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationRefresher.m; sourceTree = "<group>"; };
+		FD3EB9E21AF28FDF00FA17EE /* BKNotificationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationScheduler.h; sourceTree = "<group>"; };
+		FD3EB9E31AF28FDF00FA17EE /* BKNotificationScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationScheduler.m; sourceTree = "<group>"; };
+		FD3EB9E51AF2907800FA17EE /* BKNotificationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationUtilities.h; sourceTree = "<group>"; };
+		FD3EB9E61AF2907800FA17EE /* BKNotificationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationUtilities.m; sourceTree = "<group>"; };
 		FD7706B21AEE6AC700790B7D /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
 		FD7706B31AEE6AC700790B7D /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
-		FD7706B71AEE745A00790B7D /* BKNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenter.h; sourceTree = "<group>"; };
-		FD7706B91AEE745A00790B7D /* BKNotificationCenterImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenterImp.h; sourceTree = "<group>"; };
-		FD7706BA1AEE745A00790B7D /* BKNotificationCenterImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCenterImp.m; sourceTree = "<group>"; };
-		FD7706BB1AEE745A00790B7D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD7706BC1AEE745A00790B7D /* notification_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification_sound.caf; sourceTree = "<group>"; };
-		FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BKNotificationCenter.xcodeproj; sourceTree = "<group>"; };
 		FD7AB2801AE81392005A4F4B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		FD7AB2811AE81392005A4F4B /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		FD7AB2B31AE81657005A4F4B /* CardsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsFactory.h; sourceTree = "<group>"; };
@@ -201,7 +215,7 @@
 		FD0F88501AE424490068B03A = {
 			isa = PBXGroup;
 			children = (
-				FD7706B51AEE745A00790B7D /* BKNotificationCenter */,
+				FD3EB9C01AF27BDD00FA17EE /* BKNotificationCenter */,
 				FD0F885B1AE424490068B03A /* RemindToStudy */,
 				FD0F88751AE424490068B03A /* RemindToStudyTests */,
 				FD0F885A1AE424490068B03A /* Products */,
@@ -361,40 +375,58 @@
 			path = viewers;
 			sourceTree = "<group>";
 		};
-		FD7706B51AEE745A00790B7D /* BKNotificationCenter */ = {
+		FD3EB9C01AF27BDD00FA17EE /* BKNotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
-				FD7706B61AEE745A00790B7D /* BKNotificationCenter */,
-				FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */,
+				FD3EB9C11AF27BDD00FA17EE /* BKNotificationCenter */,
+				FD3EB9CC1AF27BDD00FA17EE /* LICENSE */,
+				FD3EB9CD1AF27BDD00FA17EE /* README.md */,
+			);
+			name = BKNotificationCenter;
+			path = ../BKNotificationCenter;
+			sourceTree = "<group>";
+		};
+		FD3EB9C11AF27BDD00FA17EE /* BKNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FD3EB9C21AF27BDD00FA17EE /* BKNotificationCenter */,
+				FD3EB9C61AF27BDD00FA17EE /* BKNotificationCenter.xcodeproj */,
 			);
 			path = BKNotificationCenter;
 			sourceTree = "<group>";
 		};
-		FD7706B61AEE745A00790B7D /* BKNotificationCenter */ = {
+		FD3EB9C21AF27BDD00FA17EE /* BKNotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
-				FD7706B71AEE745A00790B7D /* BKNotificationCenter.h */,
-				FD7706B81AEE745A00790B7D /* BKNotificationCenterImp */,
-				FD7706BB1AEE745A00790B7D /* Info.plist */,
-				FD7706BC1AEE745A00790B7D /* notification_sound.caf */,
+				FD3EB9C31AF27BDD00FA17EE /* BKNotificationCenter.h */,
+				FD3EB9C41AF27BDD00FA17EE /* implementation */,
+				FD3EB9C51AF27BDD00FA17EE /* Info.plist */,
 			);
 			path = BKNotificationCenter;
 			sourceTree = "<group>";
 		};
-		FD7706B81AEE745A00790B7D /* BKNotificationCenterImp */ = {
+		FD3EB9C41AF27BDD00FA17EE /* implementation */ = {
 			isa = PBXGroup;
 			children = (
-				FD7706B91AEE745A00790B7D /* BKNotificationCenterImp.h */,
-				FD7706BA1AEE745A00790B7D /* BKNotificationCenterImp.m */,
+				FD3EB9D91AF27BEC00FA17EE /* BKNotificationCenterImp.h */,
+				FD3EB9DA1AF27BEC00FA17EE /* BKNotificationCenterImp.m */,
+				FD3EB9DC1AF2893400FA17EE /* BKNotificationCanceler.h */,
+				FD3EB9DD1AF2893400FA17EE /* BKNotificationCanceler.m */,
+				FD3EB9DF1AF28AF800FA17EE /* BKNotificationRefresher.h */,
+				FD3EB9E01AF28AF800FA17EE /* BKNotificationRefresher.m */,
+				FD3EB9E21AF28FDF00FA17EE /* BKNotificationScheduler.h */,
+				FD3EB9E31AF28FDF00FA17EE /* BKNotificationScheduler.m */,
+				FD3EB9E51AF2907800FA17EE /* BKNotificationUtilities.h */,
+				FD3EB9E61AF2907800FA17EE /* BKNotificationUtilities.m */,
 			);
-			path = BKNotificationCenterImp;
+			path = implementation;
 			sourceTree = "<group>";
 		};
-		FD7706BE1AEE745A00790B7D /* Products */ = {
+		FD3EB9C71AF27BDD00FA17EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD7706CB1AEE745A00790B7D /* BKNotificationCenter.framework */,
-				FD7706CD1AEE745A00790B7D /* BKNotificationCenterTests.xctest */,
+				FD3EB9D61AF27BDD00FA17EE /* BKNotificationCenter.framework */,
+				FD3EB9D81AF27BDD00FA17EE /* BKNotificationCenterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -531,8 +563,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FD7706BE1AEE745A00790B7D /* Products */;
-					ProjectRef = FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */;
+					ProductGroup = FD3EB9C71AF27BDD00FA17EE /* Products */;
+					ProjectRef = FD3EB9C61AF27BDD00FA17EE /* BKNotificationCenter.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -544,18 +576,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FD7706CB1AEE745A00790B7D /* BKNotificationCenter.framework */ = {
+		FD3EB9D61AF27BDD00FA17EE /* BKNotificationCenter.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = BKNotificationCenter.framework;
-			remoteRef = FD7706CA1AEE745A00790B7D /* PBXContainerItemProxy */;
+			remoteRef = FD3EB9D51AF27BDD00FA17EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FD7706CD1AEE745A00790B7D /* BKNotificationCenterTests.xctest */ = {
+		FD3EB9D81AF27BDD00FA17EE /* BKNotificationCenterTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = BKNotificationCenterTests.xctest;
-			remoteRef = FD7706CC1AEE745A00790B7D /* PBXContainerItemProxy */;
+			remoteRef = FD3EB9D71AF27BDD00FA17EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -567,9 +599,9 @@
 			files = (
 				FD0F88681AE424490068B03A /* Main.storyboard in Resources */,
 				FD0F886D1AE424490068B03A /* LaunchScreen.xib in Resources */,
+				FD3EB9D11AF27BDD00FA17EE /* LICENSE in Resources */,
 				FD8D4C001AE8D767004C3C53 /* CardView.xib in Resources */,
-				FD7706C51AEE745A00790B7D /* notification_sound.caf in Resources */,
-				FD7706C41AEE745A00790B7D /* Info.plist in Resources */,
+				FD3EB9CE1AF27BDD00FA17EE /* Info.plist in Resources */,
 				FD0F886A1AE424490068B03A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,10 +663,13 @@
 				FD7AB2CC1AE81E95005A4F4B /* PDFCard.m in Sources */,
 				FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */,
 				FD7AB2D21AE81EB0005A4F4B /* TextCardAdder.m in Sources */,
+				FD3EB9E41AF28FDF00FA17EE /* BKNotificationScheduler.m in Sources */,
 				FD7AB2CA1AE81E95005A4F4B /* LinkCard.m in Sources */,
-				FD7706C31AEE745A00790B7D /* BKNotificationCenterImp.m in Sources */,
 				FD7AB2DD1AE8CE16005A4F4B /* iCarousel.m in Sources */,
 				FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */,
+				FD3EB9E71AF2907800FA17EE /* BKNotificationUtilities.m in Sources */,
+				FD3EB9D21AF27BDD00FA17EE /* README.md in Sources */,
+				FD3EB9E11AF28AF800FA17EE /* BKNotificationRefresher.m in Sources */,
 				FD7AB2CD1AE81E95005A4F4B /* TextCard.m in Sources */,
 				FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */,
 				FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */,
@@ -647,7 +682,9 @@
 				FD7AB2C91AE81E95005A4F4B /* GroupCard.m in Sources */,
 				FD7AB2CE1AE81E95005A4F4B /* VideoCard.m in Sources */,
 				FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */,
+				FD3EB9DB1AF27BEC00FA17EE /* BKNotificationCenterImp.m in Sources */,
 				FD0F885F1AE424490068B03A /* main.m in Sources */,
+				FD3EB9DE1AF2893400FA17EE /* BKNotificationCanceler.m in Sources */,
 				FD7AB2D81AE8C6D7005A4F4B /* CardAdderFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,6 +808,7 @@
 			baseConfigurationReference = 6E5E81804DE582639E861563 /* Pods-RemindToStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RemindToStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -783,6 +821,7 @@
 			baseConfigurationReference = AD9F000E1FB55B3C738E80D8 /* Pods-RemindToStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RemindToStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
