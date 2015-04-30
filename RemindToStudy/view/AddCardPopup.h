@@ -1,5 +1,5 @@
 //
-//  AddGoalPopup.h
+//  AddCardPopup.h
 //  RemindToStudy
 //
 //  Created by black9 on 19/04/15.

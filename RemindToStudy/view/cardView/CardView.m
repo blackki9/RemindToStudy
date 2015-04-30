@@ -8,6 +8,17 @@
 
 #import "CardView.h"
 
+@interface CardView ()
+
+@property (nonatomic, strong) id<CardViewer> currentViewer;
+
+@end
+
 @implementation CardView
+
+- (void)setupViewWithCardViewer:(id<CardViewer>)viewer
+{
+ //   [self.contentView ]
+}
 
 @end

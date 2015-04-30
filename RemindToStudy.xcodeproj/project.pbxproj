@@ -18,7 +18,7 @@
 		FD0F888B1AE425220068B03A /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F888A1AE425220068B03A /* CardViewController.m */; };
 		FD0F888E1AE425E40068B03A /* RemindToStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD0F888C1AE425E40068B03A /* RemindToStudy.xcdatamodeld */; };
 		FD0F88A71AE429060068B03A /* AddCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88A51AE429060068B03A /* AddCardPopup.m */; };
-		FD0F88AC1AE429180068B03A /* EditGoalPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AA1AE429180068B03A /* EditGoalPopup.m */; };
+		FD0F88AC1AE429180068B03A /* EditCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AA1AE429180068B03A /* EditCardPopup.m */; };
 		FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */; };
 		FD0F88BC1AE42B440068B03A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BB1AE42B440068B03A /* QuartzCore.framework */; };
 		FD0F88BE1AE42B480068B03A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BD1AE42B480068B03A /* Accelerate.framework */; };
@@ -29,6 +29,10 @@
 		FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */; };
 		FD0F88D81AE42E250068B03A /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88D71AE42E250068B03A /* TextCardViewer.m */; };
 		FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88DA1AE42E460068B03A /* TextCardEditor.m */; };
+		FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706B31AEE6AC700790B7D /* NotificationCenter.m */; };
+		FD7706C31AEE745A00790B7D /* BKNotificationCenterImp.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706BA1AEE745A00790B7D /* BKNotificationCenterImp.m */; };
+		FD7706C41AEE745A00790B7D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7706BB1AEE745A00790B7D /* Info.plist */; };
+		FD7706C51AEE745A00790B7D /* notification_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = FD7706BC1AEE745A00790B7D /* notification_sound.caf */; };
 		FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2811AE81392005A4F4B /* DBManager.m */; };
 		FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B41AE81657005A4F4B /* CardsFactory.m */; };
 		FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B81AE81E95005A4F4B /* AudioCard.m */; };
@@ -54,6 +58,20 @@
 			remoteGlobalIDString = FD0F88581AE424490068B03A;
 			remoteInfo = RemindToStudy;
 		};
+		FD7706CA1AEE745A00790B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD7706891AEBB22300790B7D;
+			remoteInfo = BKNotificationCenter;
+		};
+		FD7706CC1AEE745A00790B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD7706941AEBB22300790B7D;
+			remoteInfo = BKNotificationCenterTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -78,8 +96,8 @@
 		FD0F888D1AE425E40068B03A /* RemindToStudy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindToStudy.xcdatamodel; sourceTree = "<group>"; };
 		FD0F88A41AE429060068B03A /* AddCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCardPopup.h; sourceTree = "<group>"; };
 		FD0F88A51AE429060068B03A /* AddCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardPopup.m; sourceTree = "<group>"; };
-		FD0F88A91AE429180068B03A /* EditGoalPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditGoalPopup.h; sourceTree = "<group>"; };
-		FD0F88AA1AE429180068B03A /* EditGoalPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditGoalPopup.m; sourceTree = "<group>"; };
+		FD0F88A91AE429180068B03A /* EditCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCardPopup.h; sourceTree = "<group>"; };
+		FD0F88AA1AE429180068B03A /* EditCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCardPopup.m; sourceTree = "<group>"; };
 		FD0F88AE1AE429420068B03A /* SetNotificationDatePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNotificationDatePopup.h; sourceTree = "<group>"; };
 		FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNotificationDatePopup.m; sourceTree = "<group>"; };
 		FD0F88B61AE429A60068B03A /* CardSaver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSaver.h; sourceTree = "<group>"; };
@@ -100,6 +118,14 @@
 		FD0F88D71AE42E250068B03A /* TextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardViewer.m; sourceTree = "<group>"; };
 		FD0F88D91AE42E460068B03A /* TextCardEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardEditor.h; sourceTree = "<group>"; };
 		FD0F88DA1AE42E460068B03A /* TextCardEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardEditor.m; sourceTree = "<group>"; };
+		FD7706B21AEE6AC700790B7D /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		FD7706B31AEE6AC700790B7D /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
+		FD7706B71AEE745A00790B7D /* BKNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenter.h; sourceTree = "<group>"; };
+		FD7706B91AEE745A00790B7D /* BKNotificationCenterImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenterImp.h; sourceTree = "<group>"; };
+		FD7706BA1AEE745A00790B7D /* BKNotificationCenterImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCenterImp.m; sourceTree = "<group>"; };
+		FD7706BB1AEE745A00790B7D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7706BC1AEE745A00790B7D /* notification_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification_sound.caf; sourceTree = "<group>"; };
+		FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BKNotificationCenter.xcodeproj; sourceTree = "<group>"; };
 		FD7AB2801AE81392005A4F4B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		FD7AB2811AE81392005A4F4B /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		FD7AB2B31AE81657005A4F4B /* CardsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsFactory.h; sourceTree = "<group>"; };
@@ -175,6 +201,7 @@
 		FD0F88501AE424490068B03A = {
 			isa = PBXGroup;
 			children = (
+				FD7706B51AEE745A00790B7D /* BKNotificationCenter */,
 				FD0F885B1AE424490068B03A /* RemindToStudy */,
 				FD0F88751AE424490068B03A /* RemindToStudyTests */,
 				FD0F885A1AE424490068B03A /* Products */,
@@ -261,6 +288,8 @@
 				FD0F888C1AE425E40068B03A /* RemindToStudy.xcdatamodeld */,
 				FD7AB2B31AE81657005A4F4B /* CardsFactory.h */,
 				FD7AB2B41AE81657005A4F4B /* CardsFactory.m */,
+				FD7706B21AEE6AC700790B7D /* NotificationCenter.h */,
+				FD7706B31AEE6AC700790B7D /* NotificationCenter.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -273,8 +302,8 @@
 				FD0F88B81AE429CB0068B03A /* CardEditor.h */,
 				FD0F88A41AE429060068B03A /* AddCardPopup.h */,
 				FD0F88A51AE429060068B03A /* AddCardPopup.m */,
-				FD0F88A91AE429180068B03A /* EditGoalPopup.h */,
-				FD0F88AA1AE429180068B03A /* EditGoalPopup.m */,
+				FD0F88A91AE429180068B03A /* EditCardPopup.h */,
+				FD0F88AA1AE429180068B03A /* EditCardPopup.m */,
 				FD0F88AE1AE429420068B03A /* SetNotificationDatePopup.h */,
 				FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */,
 				FD0F88BA1AE42A2D0068B03A /* CardViewer.h */,
@@ -330,6 +359,44 @@
 				FD0F88D71AE42E250068B03A /* TextCardViewer.m */,
 			);
 			path = viewers;
+			sourceTree = "<group>";
+		};
+		FD7706B51AEE745A00790B7D /* BKNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FD7706B61AEE745A00790B7D /* BKNotificationCenter */,
+				FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */,
+			);
+			path = BKNotificationCenter;
+			sourceTree = "<group>";
+		};
+		FD7706B61AEE745A00790B7D /* BKNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FD7706B71AEE745A00790B7D /* BKNotificationCenter.h */,
+				FD7706B81AEE745A00790B7D /* BKNotificationCenterImp */,
+				FD7706BB1AEE745A00790B7D /* Info.plist */,
+				FD7706BC1AEE745A00790B7D /* notification_sound.caf */,
+			);
+			path = BKNotificationCenter;
+			sourceTree = "<group>";
+		};
+		FD7706B81AEE745A00790B7D /* BKNotificationCenterImp */ = {
+			isa = PBXGroup;
+			children = (
+				FD7706B91AEE745A00790B7D /* BKNotificationCenterImp.h */,
+				FD7706BA1AEE745A00790B7D /* BKNotificationCenterImp.m */,
+			);
+			path = BKNotificationCenterImp;
+			sourceTree = "<group>";
+		};
+		FD7706BE1AEE745A00790B7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD7706CB1AEE745A00790B7D /* BKNotificationCenter.framework */,
+				FD7706CD1AEE745A00790B7D /* BKNotificationCenterTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FD7AB2B61AE81E95005A4F4B /* entities */ = {
@@ -462,6 +529,12 @@
 			mainGroup = FD0F88501AE424490068B03A;
 			productRefGroup = FD0F885A1AE424490068B03A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FD7706BE1AEE745A00790B7D /* Products */;
+					ProjectRef = FD7706BD1AEE745A00790B7D /* BKNotificationCenter.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FD0F88581AE424490068B03A /* RemindToStudy */,
@@ -469,6 +542,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FD7706CB1AEE745A00790B7D /* BKNotificationCenter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BKNotificationCenter.framework;
+			remoteRef = FD7706CA1AEE745A00790B7D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FD7706CD1AEE745A00790B7D /* BKNotificationCenterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BKNotificationCenterTests.xctest;
+			remoteRef = FD7706CC1AEE745A00790B7D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FD0F88571AE424490068B03A /* Resources */ = {
@@ -478,6 +568,8 @@
 				FD0F88681AE424490068B03A /* Main.storyboard in Resources */,
 				FD0F886D1AE424490068B03A /* LaunchScreen.xib in Resources */,
 				FD8D4C001AE8D767004C3C53 /* CardView.xib in Resources */,
+				FD7706C51AEE745A00790B7D /* notification_sound.caf in Resources */,
+				FD7706C41AEE745A00790B7D /* Info.plist in Resources */,
 				FD0F886A1AE424490068B03A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,15 +626,17 @@
 				FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */,
 				FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */,
 				FD7AB2C81AE81E95005A4F4B /* Card.m in Sources */,
-				FD0F88AC1AE429180068B03A /* EditGoalPopup.m in Sources */,
+				FD0F88AC1AE429180068B03A /* EditCardPopup.m in Sources */,
 				FD0F888B1AE425220068B03A /* CardViewController.m in Sources */,
 				FD7AB2CC1AE81E95005A4F4B /* PDFCard.m in Sources */,
 				FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */,
 				FD7AB2D21AE81EB0005A4F4B /* TextCardAdder.m in Sources */,
 				FD7AB2CA1AE81E95005A4F4B /* LinkCard.m in Sources */,
+				FD7706C31AEE745A00790B7D /* BKNotificationCenterImp.m in Sources */,
 				FD7AB2DD1AE8CE16005A4F4B /* iCarousel.m in Sources */,
 				FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */,
 				FD7AB2CD1AE81E95005A4F4B /* TextCard.m in Sources */,
+				FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */,
 				FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */,
 				FD7AB2CB1AE81E95005A4F4B /* Notification.m in Sources */,
 				FD0F88621AE424490068B03A /* AppDelegate.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  EditGoalPopup.h
+//  EditCardPopup.h
 //  RemindToStudy
 //
 //  Created by black9 on 19/04/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditGoalPopup : UIViewController
+@interface EditCardPopup : UIViewController
 
 @end

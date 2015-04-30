@@ -15,6 +15,8 @@
 #import "AddCardPopup.h"
 #import "CardSaverImplementation.h"
 #import "CardAdderFactory.h"
+#import <NSDate+DateTools.h>
+#import "NotificationCenter.h"
 
 const CGFloat carouselItemWidth = 220.0f;
 NSString* const cardViewControllerSegueKey = @"CardViewSegue";
@@ -83,19 +85,30 @@ const CGFloat addPopupHeight = 400.0f;
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    [self setupCarouselView:view];
+    UIView* result = [self setupCarouselView:view index:index];
     
-    return view;
+    return result;
 }
 
-- (void)setupCarouselView:(UIView*)view
+- (UIView*)setupCarouselView:(UIView*)view index:(NSInteger)index
 {
-    if (view == nil)
+    UIView* result = view;
+    if (result== nil)
     {
-        view = [[[NSBundle mainBundle] loadNibNamed:cardViewNibName owner:self options:nil] objectAtIndex:0];
+        result = [[[NSBundle mainBundle] loadNibNamed:cardViewNibName owner:self options:nil] objectAtIndex:0];
     }
     
+    CardView* remindCardView = (CardView*)result;
+    
+    Card* card = self.currentCards[index];
+    
+    remindCardView.cardNameLabel.text = card.cardName;
+    remindCardView.typeLabel.text = [card cardType];
+    remindCardView.dateLabel.text = [card.notification.fireDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
+    
+    return result;
 }
+
 
 #pragma mark - icarousel delegate
 
@@ -122,8 +135,7 @@ const CGFloat addPopupHeight = 400.0f;
     __weak CardListViewController* weakSelf = self;
     formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
         // Passing data
-        AddCardPopup* popup = (AddCardPopup*)presentedFSViewController;
-        [weakSelf setupAddCardPopup:popup];
+        AddCardPopup* popup = [weakSelf setupAddCardPopup:(AddCardPopup*)presentedFSViewController];
         popup.finishHandler = ^(BOOL result) {
             [weakSelf loadCards];
         };
@@ -133,12 +145,15 @@ const CGFloat addPopupHeight = 400.0f;
     [formSheet presentAnimated:YES completionHandler:nil];
 }
 
-- (void)setupAddCardPopup:(AddCardPopup*)addPopup
+
+- (AddCardPopup*)setupAddCardPopup:(AddCardPopup*)addPopup
 {
     addPopup.saver = self.saver;
     addPopup.groupCard = self.baseGroupCard;
     addPopup.adder = [CardAdderFactory adderForType:kTextAdder]; // TODO add chooser for types
-    [addPopup updateUI];
+    [addPopup updateUIWithCurrentAdder];
+    
+    return addPopup;
 }
 
 @end

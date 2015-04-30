@@ -1,18 +1,18 @@
 //
-//  EditGoalPopup.m
+//  EditCardPopup.m
 //  RemindToStudy
 //
 //  Created by black9 on 19/04/15.
 //  Copyright (c) 2015 black9. All rights reserved.
 //
 
-#import "EditGoalPopup.h"
+#import "EditCardPopup.h"
 
-@interface EditGoalPopup ()
+@interface EditCardPopup ()
 
 @end
 
-@implementation EditGoalPopup
+@implementation EditCardPopup
 
 - (void)viewDidLoad {
     [super viewDidLoad];

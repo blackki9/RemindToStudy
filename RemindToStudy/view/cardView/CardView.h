@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardViewer.h"
 
 @interface CardView : UIView
 
@@ -15,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 
+- (void)setupViewWithCardViewer:(id<CardViewer>)viewer;
 
 @end
