@@ -7,12 +7,35 @@
 //
 
 #import "SetNotificationDatePopup.h"
+#import <MZFormSheetController.h>
 
 @interface SetNotificationDatePopup ()
+
+@property (nonatomic,strong) NotificationSetCompletion finishBlock;
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end
 
 @implementation SetNotificationDatePopup
+
++ (void)showPopupWithCompletion:(NotificationSetCompletion)finishBlock
+{
+    SetNotificationDatePopup * viewController = (SetNotificationDatePopup*) [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"SetNotificationDatePopup"];
+    
+    
+    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:CGSizeMake(300,
+                                                                                              300)
+                                                                    viewController:viewController];
+    formSheet.portraitTopInset = 100;
+    formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
+        [viewController setCompletionBlock:finishBlock];
+    };
+    
+    
+    formSheet.transitionStyle = MZFormSheetTransitionStyleSlideAndBounceFromLeft;
+    [formSheet presentAnimated:YES completionHandler:nil];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,14 +47,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setCompletionBlock:(NotificationSetCompletion)finishBlock
+{
+    self.finishBlock = finishBlock;
 }
-*/
+
+- (IBAction)saveAction:(id)sender {
+    self.finishBlock(self.datePicker.date);
+    [self hidePopup];
+}
+
+- (IBAction)cancel:(id)sender {
+    [self hidePopup];
+}
+
+- (void)hidePopup
+{
+    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
+}
 
 @end

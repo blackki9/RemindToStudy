@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^NotificationSetCompletion) (NSDate* selectedDate);
+
 @interface SetNotificationDatePopup : UIViewController
+
++ (void)showPopupWithCompletion:(NotificationSetCompletion)finishBlock;
+- (void)setCompletionBlock:(NotificationSetCompletion)finishBlock;
 
 @end

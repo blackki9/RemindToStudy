@@ -7,7 +7,20 @@
 //
 
 #import "CardLoaderImplementation.h"
+#import "GroupCard.h"
+#import <CoreData+MagicalRecord.h>
 
 @implementation CardLoaderImplementation
+
+- (GroupCard*)loadBaseList
+{
+    GroupCard* result = [GroupCard MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"levelIndex = 0"]];
+    
+    if(!result) {
+        result = [GroupCard newCard];
+    }
+    
+    return result;
+}
 
 @end
