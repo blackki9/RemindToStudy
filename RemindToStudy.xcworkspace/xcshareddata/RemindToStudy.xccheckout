@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2BB7D6C7-D82F-4D60-A2F5-D71C7D290E96</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RemindToStudy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</key>
+		<string>https://github.com/blackki9/RemindToStudy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RemindToStudy.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/blackki9/RemindToStudy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RemindToStudy</string>
+		</dict>
+	</array>
+</dict>
+</plist>
