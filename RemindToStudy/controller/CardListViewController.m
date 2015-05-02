@@ -17,6 +17,8 @@
 #import "CardAdderFactory.h"
 #import <NSDate+DateTools.h>
 #import "NotificationCenter.h"
+#import "Constants.h"
+#import "CardViewerFactory.h"
 
 const CGFloat carouselItemWidth = 220.0f;
 NSString* const cardViewControllerSegueKey = @"CardViewSegue";
@@ -32,6 +34,7 @@ const CGFloat addPopupHeight = 400.0f;
 @property (nonatomic, strong) id<CardLoader> loader;
 @property (nonatomic, strong) NSMutableArray* currentCards;
 @property (nonatomic, strong) id<CardSaver> saver;
+@property (nonatomic, strong) Card* currentCardToShow;
 
 @end
 
@@ -57,7 +60,14 @@ const CGFloat addPopupHeight = 400.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self registerToNotifications];
+
     [self loadCards];
+}
+
+- (void)registerToNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:kCardHandlerNotification object:nil];
 }
 
 - (void)loadCards
@@ -70,6 +80,19 @@ const CGFloat addPopupHeight = 400.0f;
     
     [self.carousel reloadData];
 }
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self unregisterToNotifications];
+}
+
+- (void)unregisterToNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 #pragma mark - icarousel data source
 
@@ -101,12 +124,21 @@ const CGFloat addPopupHeight = 400.0f;
     CardView* remindCardView = (CardView*)result;
     
     Card* card = self.currentCards[index];
-    
-    remindCardView.cardNameLabel.text = card.cardName;
-    remindCardView.typeLabel.text = [card cardType];
-    remindCardView.dateLabel.text = [card.notification.fireDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
-    
+    remindCardView = [self setupCardView:remindCardView card:card];
+ 
     return result;
+}
+
+- (CardView*)setupCardView:(CardView*)cardView card:(Card*)card
+{
+    cardView.cardNameLabel.text = card.cardName;
+    cardView.typeLabel.text = [card cardType];
+    cardView.dateLabel.text = [card.notification.fireDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
+
+    id<CardViewer> viewer = [CardViewerFactory viewerForCard:card];
+    [cardView setupViewWithCardViewer:viewer];
+    
+    return cardView;
 }
 
 
@@ -114,6 +146,13 @@ const CGFloat addPopupHeight = 400.0f;
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
+    Card* cardToShow = self.currentCards[index];
+    [self showCard:cardToShow];
+}
+
+- (void)showCard:(Card*)card
+{
+    self.currentCardToShow = card;
     [self performSegueWithIdentifier:cardViewControllerSegueKey sender:self];
 }
 
@@ -145,7 +184,6 @@ const CGFloat addPopupHeight = 400.0f;
     [formSheet presentAnimated:YES completionHandler:nil];
 }
 
-
 - (AddCardPopup*)setupAddCardPopup:(AddCardPopup*)addPopup
 {
     addPopup.saver = self.saver;
@@ -154,6 +192,19 @@ const CGFloat addPopupHeight = 400.0f;
     [addPopup updateUIWithCurrentAdder];
     
     return addPopup;
+}
+
+#pragma mark - notification handling
+
+- (void)handleNotification:(NSNotification*)notification
+{
+    [self hidePopups];
+    [self showCard:[self.loader cardForNotificationId:notification.userInfo[kCardHandlerNotificationIdKey]]];
+}
+
+- (void)hidePopups
+{
+    //TODO
 }
 
 @end

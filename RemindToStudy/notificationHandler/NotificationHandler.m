@@ -11,7 +11,7 @@
 
 @interface NotificationHandler()
 
-@property (nonatomic, strong) UINavigationController* navigationController;
+@property (nonatomic, strong) UINavigationController* currentNavigationController;
 @property (nonatomic, copy) NSString* currentNotificationId;
 @end
 
@@ -19,12 +19,15 @@
 
 - (void)setNavigationController:(UINavigationController*)navController
 {
-    self.navigationController = navController;
+    self.currentNavigationController = navController;
 }
 
 - (void)handleNotificationWithId:(NSString*)notificationId
 {
-    NSAssert(notificationId != nil, @"notification should be not nil");
+    NSAssert(notificationId != nil, @"notificationid should be not nil");
+    
+    [self.currentNavigationController popToRootViewControllerAnimated:YES];
+    
     self.currentNotificationId = notificationId;
     [self sendNotificationToShowCardContent];
 }

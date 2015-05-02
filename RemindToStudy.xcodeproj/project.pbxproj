@@ -27,7 +27,6 @@
 		FD0F88C41AE42B5B0068B03A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88C31AE42B5B0068B03A /* CoreData.framework */; };
 		FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */; };
 		FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */; };
-		FD0F88D81AE42E250068B03A /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88D71AE42E250068B03A /* TextCardViewer.m */; };
 		FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88DA1AE42E460068B03A /* TextCardEditor.m */; };
 		FD54405F1AF3A8DE0068D644 /* BKAlertNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54404E1AF3A8DE0068D644 /* BKAlertNotifier.m */; };
 		FD5440601AF3A8DE0068D644 /* BKNotificationCanceler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440501AF3A8DE0068D644 /* BKNotificationCanceler.m */; };
@@ -40,6 +39,8 @@
 		FD54406E1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54406B1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m */; };
 		FD54406F1AF3A92A0068D644 /* BKTextViewKeyboardHider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54406D1AF3A92A0068D644 /* BKTextViewKeyboardHider.m */; };
 		FD5440731AF40BF20068D644 /* NotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440721AF40BF20068D644 /* NotificationHandler.m */; };
+		FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440781AF510E30068D644 /* TextCardViewer.m */; };
+		FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407B1AF510F10068D644 /* CardViewerFactory.m */; };
 		FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706B31AEE6AC700790B7D /* NotificationCenter.m */; };
 		FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2811AE81392005A4F4B /* DBManager.m */; };
 		FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B41AE81657005A4F4B /* CardsFactory.m */; };
@@ -108,8 +109,6 @@
 		FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSaverImplementation.m; sourceTree = "<group>"; };
 		FD0F88CA1AE42D4F0068B03A /* CardLoaderImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardLoaderImplementation.h; sourceTree = "<group>"; };
 		FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardLoaderImplementation.m; sourceTree = "<group>"; };
-		FD0F88D61AE42E250068B03A /* TextCardViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardViewer.h; sourceTree = "<group>"; };
-		FD0F88D71AE42E250068B03A /* TextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardViewer.m; sourceTree = "<group>"; };
 		FD0F88D91AE42E460068B03A /* TextCardEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardEditor.h; sourceTree = "<group>"; };
 		FD0F88DA1AE42E460068B03A /* TextCardEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardEditor.m; sourceTree = "<group>"; };
 		FD54404B1AF3A8DE0068D644 /* BKNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenter.h; sourceTree = "<group>"; };
@@ -136,6 +135,10 @@
 		FD5440711AF40BF20068D644 /* NotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationHandler.h; sourceTree = "<group>"; };
 		FD5440721AF40BF20068D644 /* NotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHandler.m; sourceTree = "<group>"; };
 		FD5440741AF40ED60068D644 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FD5440771AF510E30068D644 /* TextCardViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardViewer.h; sourceTree = "<group>"; };
+		FD5440781AF510E30068D644 /* TextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardViewer.m; sourceTree = "<group>"; };
+		FD54407A1AF510F10068D644 /* CardViewerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewerFactory.h; sourceTree = "<group>"; };
+		FD54407B1AF510F10068D644 /* CardViewerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewerFactory.m; sourceTree = "<group>"; };
 		FD7706B21AEE6AC700790B7D /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
 		FD7706B31AEE6AC700790B7D /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		FD7AB2801AE81392005A4F4B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -310,6 +313,7 @@
 		FD0F88851AE424C30068B03A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FD5440761AF510D70068D644 /* viewers */,
 				FD8D4BFB1AE8D429004C3C53 /* cardView */,
 				FD0F88D01AE42DF10068B03A /* Implementations */,
 				FD0F88B81AE429CB0068B03A /* CardEditor.h */,
@@ -351,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				FD0F88D41AE42E250068B03A /* editors */,
-				FD0F88D51AE42E250068B03A /* viewers */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -363,15 +366,6 @@
 				FD0F88DA1AE42E460068B03A /* TextCardEditor.m */,
 			);
 			path = editors;
-			sourceTree = "<group>";
-		};
-		FD0F88D51AE42E250068B03A /* viewers */ = {
-			isa = PBXGroup;
-			children = (
-				FD0F88D61AE42E250068B03A /* TextCardViewer.h */,
-				FD0F88D71AE42E250068B03A /* TextCardViewer.m */,
-			);
-			path = viewers;
 			sourceTree = "<group>";
 		};
 		FD5440151AF3916F0068D644 /* keyboardHider */ = {
@@ -457,6 +451,17 @@
 				FD5440721AF40BF20068D644 /* NotificationHandler.m */,
 			);
 			path = notificationHandler;
+			sourceTree = "<group>";
+		};
+		FD5440761AF510D70068D644 /* viewers */ = {
+			isa = PBXGroup;
+			children = (
+				FD5440771AF510E30068D644 /* TextCardViewer.h */,
+				FD5440781AF510E30068D644 /* TextCardViewer.m */,
+				FD54407A1AF510F10068D644 /* CardViewerFactory.h */,
+				FD54407B1AF510F10068D644 /* CardViewerFactory.m */,
+			);
+			path = viewers;
 			sourceTree = "<group>";
 		};
 		FD7AB2B61AE81E95005A4F4B /* entities */ = {
@@ -660,6 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */,
 				FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */,
 				FD0F88A71AE429060068B03A /* AddCardPopup.m in Sources */,
 				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
@@ -685,9 +691,9 @@
 				FD7AB2CB1AE81E95005A4F4B /* Notification.m in Sources */,
 				FD5440731AF40BF20068D644 /* NotificationHandler.m in Sources */,
 				FD0F88621AE424490068B03A /* AppDelegate.m in Sources */,
+				FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */,
 				FD5440651AF3A8DE0068D644 /* BKSoundNotifier.m in Sources */,
 				FD5440631AF3A8DE0068D644 /* BKNotificationScheduler.m in Sources */,
-				FD0F88D81AE42E250068B03A /* TextCardViewer.m in Sources */,
 				FD8D4BFE1AE8D74F004C3C53 /* CardView.m in Sources */,
 				FD0F888E1AE425E40068B03A /* RemindToStudy.xcdatamodeld in Sources */,
 				FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */,

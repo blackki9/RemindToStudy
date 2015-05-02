@@ -7,6 +7,7 @@
 //
 
 #import "CardView.h"
+#import "CardViewer.h"
 
 @interface CardView ()
 
@@ -18,7 +19,14 @@
 
 - (void)setupViewWithCardViewer:(id<CardViewer>)viewer
 {
- //   [self.contentView ]
+    if(self.currentViewer) {
+        [self.currentViewer clearContentView];
+    }
+    
+    self.currentViewer = viewer;
+    [viewer addUIToContentView:self.contentView];
 }
+
+
 
 @end

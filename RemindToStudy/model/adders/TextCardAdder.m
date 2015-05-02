@@ -23,6 +23,7 @@ CGFloat kRightMargin = 5.0f;
 
 @property (nonatomic,strong) UITextView* cardTextView;
 @property (nonatomic,strong) BKTextViewKeyboardHider* hider;
+
 @end
 
 @implementation TextCardAdder
