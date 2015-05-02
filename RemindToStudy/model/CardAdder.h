@@ -10,10 +10,11 @@
 #define RemindToStudy_CardAdder_h
 
 @import UIKit;
+@class Card;
 
 @protocol CardAdderDelegate <NSObject>
 
-- (void)cardSubmittedWithInfo:(NSDictionary*)info class:(Class)cardClass;
+- (void)cardSubmitted:(Card*)card;
 - (NSString*)cardName;
 
 @end

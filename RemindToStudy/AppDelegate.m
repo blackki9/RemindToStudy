@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DBManager.h"
 #import "NotificationCenter.h"
+#import "NotificationHandler.h"
 
 @interface AppDelegate ()
 
@@ -23,9 +24,20 @@
     
     [[NotificationCenter sharedCenter] initializeWithApplication:application];
     
-
+    [[NotificationCenter sharedCenter] setNotificationHandler:[self handlerForNotifications]];
     
     return YES;
+}
+
+- (NotificationHandler*)handlerForNotifications
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UINavigationController* navController = [storyboard instantiateInitialViewController];
+    
+    NotificationHandler* handler = [[NotificationHandler alloc] init];
+    [handler setNavigationController:navController];
+    
+    return handler;
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification

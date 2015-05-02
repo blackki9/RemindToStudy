@@ -9,6 +9,13 @@
 #import "NotificationCenter.h"
 #import "BKNotificationCenter.h"
 #import "DBManager.h"
+#import "NotificationHandler.h"
+
+@interface NotificationCenter()
+
+@property (nonatomic,strong) NotificationHandler* currentNotificationHandler;
+
+@end
 
 @implementation NotificationCenter
 
@@ -21,6 +28,11 @@
     });
     
     return sharedInstance;
+}
+
+- (void)setNotificationHandler:(NotificationHandler*)handler
+{
+    self.currentNotificationHandler = handler;
 }
 
 - (void)scheduleNotification:(Notification*)notification
@@ -71,15 +83,17 @@
 
 - (void)initDefaultHandlerForAlertAction
 {
+    __weak NotificationCenter* weakSelf = self;
     [[BKNotificationCenterImp sharedCenter] setCompletitionHandler:^(NSInteger buttonIndex, NSString *notificationId) {
-        
+        [weakSelf.currentNotificationHandler handleNotificationWithId:notificationId];
     }];
 }
 
 - (void)initDefaultHandlerForOpenAppFromNotification
 {
+    __weak NotificationCenter* weakSelf = self;
     [[BKNotificationCenterImp sharedCenter] setActionAfterOpenApp:^(NSString *notificationId) {
-        
+        [weakSelf.currentNotificationHandler handleNotificationWithId:notificationId];
     }];
 }
 

@@ -10,6 +10,13 @@
 	<string>RemindToStudy</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+<<<<<<< HEAD
+=======
+		<key>B96B01CC02C3C0ED7CDD1A0FC49B6216CE5A08E4</key>
+		<string>https://github.com/blackki9/BKNotificationCenter</string>
+		<key>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</key>
+		<string>https://github.com/blackki9/BKNotificationCenter.git</string>
+>>>>>>> developer
 		<key>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</key>
 		<string>https://github.com/blackki9/RemindToStudy.git</string>
 	</dict>
@@ -17,6 +24,13 @@
 	<string>RemindToStudy.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+<<<<<<< HEAD
+=======
+		<key>B96B01CC02C3C0ED7CDD1A0FC49B6216CE5A08E4</key>
+		<string>../BKNotificationCenter/BKNotificationCenter</string>
+		<key>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</key>
+		<string>../../BKNotificationCenter</string>
+>>>>>>> developer
 		<key>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</key>
 		<string>..</string>
 	</dict>
@@ -32,6 +46,25 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
+=======
+			<string>B96B01CC02C3C0ED7CDD1A0FC49B6216CE5A08E4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BKNotificationCenter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BKNotificationCenter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+>>>>>>> developer
 			<string>F552CD78191E6B45CCDB06A7A345A3C7078DAB27</string>
 			<key>IDESourceControlWCCName</key>
 			<string>RemindToStudy</string>
