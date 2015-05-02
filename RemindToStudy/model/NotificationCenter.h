@@ -10,6 +10,8 @@
 #import "Notification.h"
 @import UIKit;
 
+@class NotificationHandler;
+
 //handle saving notifications and scheduling local notifications
 
 @interface NotificationCenter : NSObject
@@ -17,6 +19,7 @@
 + (instancetype)sharedCenter;
 
 - (Notification*)newNotification;
+- (void)setNotificationHandler:(NotificationHandler*)handler;
 
 - (void)initializeWithApplication:(UIApplication*)application;
 

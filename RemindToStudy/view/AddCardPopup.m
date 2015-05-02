@@ -14,6 +14,7 @@
 #import "SetNotificationDatePopup.h"
 #import <NSDate+DateTools.h>
 #import "NotificationCenter.h"
+#import "BKTextFieldKeyboardHider.h"
 
 @interface AddCardPopup ()
 
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *dateButton;
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (nonatomic, strong) BKTextFieldKeyboardHider* keyboardHider;
 
 @end
 
@@ -30,14 +32,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupKeyboardHider];
+    [self updateDateButtonToCurrentDate];
+}
 
+- (void)setupKeyboardHider
+{
+    self.keyboardHider = [[BKTextFieldKeyboardHider alloc] init];
+    
+    self.cardNameField = [self.keyboardHider addHidingKeyboardOnReturnAndSetDelegateForTextField:self.cardNameField];
+}
+
+- (void)updateDateButtonToCurrentDate
+{
     self.selectedDate = [NSDate date];
     [self updateDateButton];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)updateDateButton
 {
-    [super viewWillAppear:animated];
+    NSString* dateString = [NSString stringWithFormat:@"Remind date: %@",[self.selectedDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"]];
+    [self.dateButton setTitle:dateString forState:UIControlStateNormal];
 }
 
 - (IBAction)setNotificationDate:(id)sender {
@@ -47,12 +62,6 @@
         weakSelf.selectedDate = selectedDate;
         [weakSelf updateDateButton];
     }];
-}
-
-- (void)updateDateButton
-{
-    NSString* dateString = [NSString stringWithFormat:@"Remind date: %@",[self.selectedDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"]];
-    [self.dateButton setTitle:dateString forState:UIControlStateNormal];
 }
 
 #pragma mark - setup UI
@@ -88,14 +97,10 @@
 
 #pragma mark - CardAdderDelegate
 
-- (void)cardSubmittedWithInfo:(NSDictionary*)info class:(Class)cardClass
+- (void)cardSubmitted:(Card*)card
 {
-    Card* card = [CardsFactory cardForClass:cardClass info:info];
-    
     card = [self setupNotificationForCard:card];
-  
     [self.saver saveCard:card];
-    
     [self.groupCard addCardsObject:card];
 }
 
