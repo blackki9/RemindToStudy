@@ -44,7 +44,7 @@
     self.cardTextView.font = [UIFont systemFontOfSize:20.0f];
     
     self.cardTextView.editable = NO;
-    self.cardTextView.userInteractionEnabled = NO;
+    self.cardTextView.userInteractionEnabled = YES;
     
     [contentView addSubview:self.cardTextView];
 }
@@ -65,6 +65,11 @@
 - (void)fillTextViewWithCardContent
 {
     self.cardTextView.text = [self.card mainText];
+}
+
+- (void)disableTouches
+{
+    self.cardTextView.userInteractionEnabled = NO;
 }
 
 @end

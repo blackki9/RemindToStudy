@@ -19,13 +19,13 @@
 #import "NotificationCenter.h"
 #import "Constants.h"
 #import "CardViewerFactory.h"
+#import "CardViewController.h"
 
-const CGFloat carouselItemWidth = 220.0f;
+const CGFloat carouselItemWidth = 320.0f;
+const CGFloat carouselItemXMargin = 20.0f;
+
 NSString* const cardViewControllerSegueKey = @"CardViewSegue";
 NSString* const cardViewNibName = @"CardView";
-NSString* const addPopupIdentifier = @"AddCardPopup";
-const CGFloat addPopupWidth = 300.0f;
-const CGFloat addPopupHeight = 400.0f;
 
 @interface CardListViewController ()
 
@@ -118,8 +118,9 @@ const CGFloat addPopupHeight = 400.0f;
     UIView* result = view;
     if (result== nil)
     {
-        result = [[[NSBundle mainBundle] loadNibNamed:cardViewNibName owner:self options:nil] objectAtIndex:0];
+        result = [self newCardView];
     }
+    
     
     CardView* remindCardView = (CardView*)result;
     
@@ -129,13 +130,31 @@ const CGFloat addPopupHeight = 400.0f;
     return result;
 }
 
+- (CardView*)newCardView
+{
+    CardView* result = [[[NSBundle mainBundle] loadNibNamed:cardViewNibName owner:self options:nil] objectAtIndex:0];
+    
+    result.frame = [self cardViewFrame];
+
+    return result;
+}
+
+- (CGRect)cardViewFrame
+{
+    //TODO implement handling size for different screens
+    return  CGRectMake(0,
+                       0,
+                       carouselItemWidth - carouselItemXMargin,
+                       500);
+}
+
 - (CardView*)setupCardView:(CardView*)cardView card:(Card*)card
 {
     cardView.cardNameLabel.text = card.cardName;
     cardView.typeLabel.text = [card cardType];
     cardView.dateLabel.text = [card.notification.fireDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
 
-    id<CardViewer> viewer = [CardViewerFactory viewerForCard:card];
+    id<CardViewer> viewer = [CardViewerFactory viewerWithDisabledTouchesForCard:card];
     [cardView setupViewWithCardViewer:viewer];
     
     return cardView;
@@ -153,7 +172,11 @@ const CGFloat addPopupHeight = 400.0f;
 - (void)showCard:(Card*)card
 {
     self.currentCardToShow = card;
-    [self performSegueWithIdentifier:cardViewControllerSegueKey sender:self];
+    CardView * cardView = [self newCardView];
+    
+    cardView = [self setupCardView:cardView card:card];
+    
+    [CardViewController showCardPopupWithCardView:cardView];
 }
 
 #pragma mark - add
@@ -165,23 +188,15 @@ const CGFloat addPopupHeight = 400.0f;
 #pragma mark - show add popup
 - (void)showAddController
 {
-    UIViewController * viewController = [self.storyboard instantiateViewControllerWithIdentifier:addPopupIdentifier];
-    
-    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:CGSizeMake(addPopupWidth,
-                                                                                              addPopupHeight)
-                                                                    viewController:viewController];
-    
     __weak CardListViewController* weakSelf = self;
-    formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
-        // Passing data
-        AddCardPopup* popup = [weakSelf setupAddCardPopup:(AddCardPopup*)presentedFSViewController];
-        popup.finishHandler = ^(BOOL result) {
-            [weakSelf loadCards];
-        };
-    };
-    
-    formSheet.transitionStyle = MZFormSheetTransitionStyleSlideFromBottom;
-    [formSheet presentAnimated:YES completionHandler:nil];
+   __block AddCardPopup* popup = [AddCardPopup showAddPopupWithFinishHandler:^(BOOL result) {
+       if(result) {
+           [weakSelf loadCards];
+       }
+   } passBlock:^(UIViewController* controller) {
+       [weakSelf setupAddCardPopup:(AddCardPopup*)controller];
+   }];
+
 }
 
 - (AddCardPopup*)setupAddCardPopup:(AddCardPopup*)addPopup

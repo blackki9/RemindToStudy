@@ -41,6 +41,7 @@
 		FD5440731AF40BF20068D644 /* NotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440721AF40BF20068D644 /* NotificationHandler.m */; };
 		FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440781AF510E30068D644 /* TextCardViewer.m */; };
 		FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407B1AF510F10068D644 /* CardViewerFactory.m */; };
+		FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */; };
 		FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706B31AEE6AC700790B7D /* NotificationCenter.m */; };
 		FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2811AE81392005A4F4B /* DBManager.m */; };
 		FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B41AE81657005A4F4B /* CardsFactory.m */; };
@@ -139,6 +140,8 @@
 		FD5440781AF510E30068D644 /* TextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardViewer.m; sourceTree = "<group>"; };
 		FD54407A1AF510F10068D644 /* CardViewerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewerFactory.h; sourceTree = "<group>"; };
 		FD54407B1AF510F10068D644 /* CardViewerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewerFactory.m; sourceTree = "<group>"; };
+		FD54407D1AF551A70068D644 /* DisabledTouchesTextCardViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledTouchesTextCardViewer.h; sourceTree = "<group>"; };
+		FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledTouchesTextCardViewer.m; sourceTree = "<group>"; };
 		FD7706B21AEE6AC700790B7D /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
 		FD7706B31AEE6AC700790B7D /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		FD7AB2801AE81392005A4F4B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -460,6 +463,8 @@
 				FD5440781AF510E30068D644 /* TextCardViewer.m */,
 				FD54407A1AF510F10068D644 /* CardViewerFactory.h */,
 				FD54407B1AF510F10068D644 /* CardViewerFactory.m */,
+				FD54407D1AF551A70068D644 /* DisabledTouchesTextCardViewer.h */,
+				FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */,
 			);
 			path = viewers;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */,
 				FD0F88A71AE429060068B03A /* AddCardPopup.m in Sources */,
 				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
+				FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */,
 				FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */,
 				FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */,
 				FD5440601AF3A8DE0068D644 /* BKNotificationCanceler.m in Sources */,

@@ -16,6 +16,10 @@
 #import "NotificationCenter.h"
 #import "BKTextFieldKeyboardHider.h"
 
+NSString* const addPopupIdentifier = @"AddCardPopup";
+const CGFloat addPopupWidth = 300.0f;
+const CGFloat addPopupHeight = 400.0f;
+
 @interface AddCardPopup ()
 
 @property (strong, nonatomic) IBOutlet UITextField *cardNameField;
@@ -29,8 +33,28 @@
 
 @implementation AddCardPopup
 
++ (AddCardPopup*)showAddPopupWithFinishHandler:(CardAddFinishHandler)finishHandler passBlock:(PassBlock)passBlock
+{
+    AddCardPopup * viewController = (AddCardPopup*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:addPopupIdentifier];
+    viewController.finishHandler = finishHandler;
+    
+    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:CGSizeMake(addPopupWidth,
+                                                                                              addPopupHeight)
+                                                                    viewController:viewController];
+    
+    formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
+        passBlock(presentedFSViewController);
+    };
+    
+    formSheet.transitionStyle = MZFormSheetTransitionStyleSlideFromBottom;
+    [formSheet presentAnimated:YES completionHandler:nil];
+    
+    return viewController;
+}
 
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self setupKeyboardHider];
     [self updateDateButtonToCurrentDate];
@@ -55,7 +79,8 @@
     [self.dateButton setTitle:dateString forState:UIControlStateNormal];
 }
 
-- (IBAction)setNotificationDate:(id)sender {
+- (IBAction)setNotificationDate:(id)sender
+{
     __weak AddCardPopup* weakSelf = self;
     [SetNotificationDatePopup showPopupWithCompletion:^(NSDate *selectedDate) {
         NSLog(@"");
@@ -72,7 +97,8 @@
 }
 
 #pragma mark - adding
-- (IBAction)addCard:(id)sender {
+- (IBAction)addCard:(id)sender
+{
     NSDictionary* cardInfo = [self.adder collectInfoWithDelegate:self];
     [self.adder addCardWithInfo:cardInfo delegate:self];
     if(self.finishHandler) {
@@ -82,7 +108,8 @@
 }
 
 #pragma mark - hiding
-- (IBAction)cancel:(id)sender {
+- (IBAction)cancel:(id)sender
+{
     if(self.finishHandler) {
         self.finishHandler(NO);
     }

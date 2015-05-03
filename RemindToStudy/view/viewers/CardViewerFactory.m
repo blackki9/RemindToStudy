@@ -9,6 +9,7 @@
 #import "CardViewerFactory.h"
 #import "TextCardViewer.h"
 #import "TextCard.h"
+#import "DisabledTouchesTextCardViewer.h"
 
 @implementation CardViewerFactory
 
@@ -21,9 +22,23 @@
     return nil;
 }
 
++ (id<CardViewer>)viewerWithDisabledTouchesForCard:(Card*)card
+{
+    if([card class] == [TextCard class]) {
+        return [self textViewerWithDisabledTouchesForCard:card];
+    }
+    
+    return nil;
+}
+
 + (TextCardViewer*)textViewerForCard:(Card*)card
 {
     return [[TextCardViewer alloc] initWithCard:card];
+}
+
++ (id<CardViewer>)textViewerWithDisabledTouchesForCard:(Card*)card
+{
+    return [[DisabledTouchesTextCardViewer alloc] initWithCard:card];
 }
 
 @end

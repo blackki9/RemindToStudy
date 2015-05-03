@@ -15,6 +15,7 @@
 @class GroupCard;
 
 typedef void (^CardAddFinishHandler) (BOOL result);
+typedef void (^PassBlock) (UIViewController* controller);
 
 @interface AddCardPopup : MZFormSheetController <CardAdderDelegate>
 
@@ -23,5 +24,7 @@ typedef void (^CardAddFinishHandler) (BOOL result);
 @property (nonatomic, strong) GroupCard* groupCard;
 @property (nonatomic, strong) CardAddFinishHandler finishHandler;
 - (void)updateUIWithCurrentAdder;
+
++ (AddCardPopup*)showAddPopupWithFinishHandler:(CardAddFinishHandler)finishHandler passBlock:(PassBlock)passBlock;
 
 @end

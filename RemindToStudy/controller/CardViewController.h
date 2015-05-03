@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardView.h"
 
 @interface CardViewController : UIViewController
+
++ (void)showCardPopupWithCardView:(CardView*)cardView;
+
+- (void)setupUIWithCardView:(CardView*)cardView;
 
 @end

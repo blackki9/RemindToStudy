@@ -13,5 +13,6 @@
 @interface CardViewerFactory : NSObject
 
 + (id<CardViewer>)viewerForCard:(Card*)card;
++ (id<CardViewer>)viewerWithDisabledTouchesForCard:(Card*)card;
 
 @end

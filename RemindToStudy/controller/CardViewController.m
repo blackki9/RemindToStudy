@@ -7,8 +7,11 @@
 //
 
 #import "CardViewController.h"
+#import <MZFormSheetController.h>
 
 @interface CardViewController ()
+
+@property (nonatomic, strong) CardView* currentCardView;
 
 @end
 
@@ -16,14 +19,61 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Card";
-    // Do any additional setup after loading the view.
+    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToUpRecognized:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:swipeRecognizer];
 }
 
+- (void)swipeToUpRecognized:(UISwipeGestureRecognizer*)swipeRecognizer
+{
+    if(swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp)
+    {
+        [self hidePopup];
+    }
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)hidePopup
+{
+    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
+}
+
++ (void)showCardPopupWithCardView:(CardView*)cardView
+{
+    //TODO refactor
+    //TODO make sizes rely on sizes of screen
+    CardViewController * viewController = (CardViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"CardViewController"];
+    
+    [viewController setupUIWithCardView:cardView];
+    
+    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:[self popupSize]
+                                                                    viewController:viewController];
+    
+    formSheet.portraitTopInset = [self portraitInset];
+
+    formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
+        // Passing data
+    };
+    
+    formSheet.transitionStyle = MZFormSheetTransitionStyleFade;
+    [formSheet presentAnimated:YES completionHandler:nil];
+}
+
++ (CGSize)popupSize
+{
+    return CGSizeMake(360,
+                      600);
+}
+
++ (CGFloat)portraitInset
+{
+    return 20.0f;
+}
+
+- (void)setupUIWithCardView:(CardView*)cardView
+{
+    self.currentCardView = cardView;
+    self.currentCardView.frame = self.view.bounds;
+    [self.view addSubview:cardView];
 }
 
 

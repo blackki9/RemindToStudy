@@ -14,5 +14,5 @@
 @interface TextCardViewer : NSObject <CardViewer>
 
 - (instancetype)initWithCard:(Card*)card;
-
+- (void)disableTouches;
 @end
