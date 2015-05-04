@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CardViewer.h"
+#import "CardEditor.h"
 
 @interface CardView : UIView
 
@@ -17,5 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 
 - (void)setupViewWithCardViewer:(id<CardViewer>)viewer;
+- (void)setupViewWithEditor:(id<CardEditor>)editor;
 
 @end

@@ -124,7 +124,15 @@
                 <outlet property="dateLabel" destination="rWm-pJ-g1A" id="eYP-v9-rWO"/>
                 <outlet property="typeLabel" destination="L1n-ke-27V" id="JBw-pA-dGg"/>
             </connections>
-            <point key="canvasLocation" x="63" y="195"/>
+            <point key="canvasLocation" x="-34" y="156"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cXS-zo-AKz">
+            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Button">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <point key="canvasLocation" x="186" y="141"/>
+        </button>
     </objects>
 </document>

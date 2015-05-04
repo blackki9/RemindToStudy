@@ -12,21 +12,32 @@
 @interface CardView ()
 
 @property (nonatomic, strong) id<CardViewer> currentViewer;
-
+@property (nonatomic, strong) id<CardEditor> currentEditor;
 @end
 
 @implementation CardView
 
 - (void)setupViewWithCardViewer:(id<CardViewer>)viewer
 {
-    if(self.currentViewer) {
-        [self.currentViewer clearContentView];
-    }
-    
+
     self.currentViewer = viewer;
     [viewer addUIToContentView:self.contentView];
 }
 
+- (void)setupViewWithEditor:(id<CardEditor>)editor
+{
+    
+}
+
+- (void)clearContent
+{
+    if(self.currentViewer) {
+        [self.currentViewer clearContentView];
+    }
+    if(self.currentEditor) {
+        //TODO clean editor
+    }
+}
 
 
 @end

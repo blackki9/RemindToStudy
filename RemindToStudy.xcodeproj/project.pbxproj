@@ -17,8 +17,6 @@
 		FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88871AE424DA0068B03A /* CardListViewController.m */; };
 		FD0F888B1AE425220068B03A /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F888A1AE425220068B03A /* CardViewController.m */; };
 		FD0F888E1AE425E40068B03A /* RemindToStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD0F888C1AE425E40068B03A /* RemindToStudy.xcdatamodeld */; };
-		FD0F88A71AE429060068B03A /* AddCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88A51AE429060068B03A /* AddCardPopup.m */; };
-		FD0F88AC1AE429180068B03A /* EditCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AA1AE429180068B03A /* EditCardPopup.m */; };
 		FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */; };
 		FD0F88BC1AE42B440068B03A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BB1AE42B440068B03A /* QuartzCore.framework */; };
 		FD0F88BE1AE42B480068B03A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0F88BD1AE42B480068B03A /* Accelerate.framework */; };
@@ -42,6 +40,8 @@
 		FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440781AF510E30068D644 /* TextCardViewer.m */; };
 		FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407B1AF510F10068D644 /* CardViewerFactory.m */; };
 		FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */; };
+		FD5440851AF648680068D644 /* AddCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440821AF648680068D644 /* AddCardPopup.m */; };
+		FD5440861AF648680068D644 /* EditCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440841AF648680068D644 /* EditCardPopup.m */; };
 		FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706B31AEE6AC700790B7D /* NotificationCenter.m */; };
 		FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2811AE81392005A4F4B /* DBManager.m */; };
 		FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B41AE81657005A4F4B /* CardsFactory.m */; };
@@ -90,10 +90,6 @@
 		FD0F88891AE425220068B03A /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
 		FD0F888A1AE425220068B03A /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		FD0F888D1AE425E40068B03A /* RemindToStudy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RemindToStudy.xcdatamodel; sourceTree = "<group>"; };
-		FD0F88A41AE429060068B03A /* AddCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCardPopup.h; sourceTree = "<group>"; };
-		FD0F88A51AE429060068B03A /* AddCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardPopup.m; sourceTree = "<group>"; };
-		FD0F88A91AE429180068B03A /* EditCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCardPopup.h; sourceTree = "<group>"; };
-		FD0F88AA1AE429180068B03A /* EditCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCardPopup.m; sourceTree = "<group>"; };
 		FD0F88AE1AE429420068B03A /* SetNotificationDatePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNotificationDatePopup.h; sourceTree = "<group>"; };
 		FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNotificationDatePopup.m; sourceTree = "<group>"; };
 		FD0F88B61AE429A60068B03A /* CardSaver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSaver.h; sourceTree = "<group>"; };
@@ -142,6 +138,10 @@
 		FD54407B1AF510F10068D644 /* CardViewerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewerFactory.m; sourceTree = "<group>"; };
 		FD54407D1AF551A70068D644 /* DisabledTouchesTextCardViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledTouchesTextCardViewer.h; sourceTree = "<group>"; };
 		FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledTouchesTextCardViewer.m; sourceTree = "<group>"; };
+		FD5440811AF648680068D644 /* AddCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCardPopup.h; sourceTree = "<group>"; };
+		FD5440821AF648680068D644 /* AddCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardPopup.m; sourceTree = "<group>"; };
+		FD5440831AF648680068D644 /* EditCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCardPopup.h; sourceTree = "<group>"; };
+		FD5440841AF648680068D644 /* EditCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCardPopup.m; sourceTree = "<group>"; };
 		FD7706B21AEE6AC700790B7D /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
 		FD7706B31AEE6AC700790B7D /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		FD7AB2801AE81392005A4F4B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -316,14 +316,11 @@
 		FD0F88851AE424C30068B03A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				FD5440801AF648680068D644 /* popups */,
 				FD5440761AF510D70068D644 /* viewers */,
 				FD8D4BFB1AE8D429004C3C53 /* cardView */,
 				FD0F88D01AE42DF10068B03A /* Implementations */,
 				FD0F88B81AE429CB0068B03A /* CardEditor.h */,
-				FD0F88A41AE429060068B03A /* AddCardPopup.h */,
-				FD0F88A51AE429060068B03A /* AddCardPopup.m */,
-				FD0F88A91AE429180068B03A /* EditCardPopup.h */,
-				FD0F88AA1AE429180068B03A /* EditCardPopup.m */,
 				FD0F88AE1AE429420068B03A /* SetNotificationDatePopup.h */,
 				FD0F88AF1AE429420068B03A /* SetNotificationDatePopup.m */,
 				FD0F88BA1AE42A2D0068B03A /* CardViewer.h */,
@@ -467,6 +464,17 @@
 				FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */,
 			);
 			path = viewers;
+			sourceTree = "<group>";
+		};
+		FD5440801AF648680068D644 /* popups */ = {
+			isa = PBXGroup;
+			children = (
+				FD5440811AF648680068D644 /* AddCardPopup.h */,
+				FD5440821AF648680068D644 /* AddCardPopup.m */,
+				FD5440831AF648680068D644 /* EditCardPopup.h */,
+				FD5440841AF648680068D644 /* EditCardPopup.m */,
+			);
+			path = popups;
 			sourceTree = "<group>";
 		};
 		FD7AB2B61AE81E95005A4F4B /* entities */ = {
@@ -672,7 +680,6 @@
 			files = (
 				FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */,
 				FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */,
-				FD0F88A71AE429060068B03A /* AddCardPopup.m in Sources */,
 				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
 				FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */,
 				FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */,
@@ -681,7 +688,6 @@
 				FD7AB2C81AE81E95005A4F4B /* Card.m in Sources */,
 				FD5440611AF3A8DE0068D644 /* BKNotificationCenterImp.m in Sources */,
 				FD54406E1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m in Sources */,
-				FD0F88AC1AE429180068B03A /* EditCardPopup.m in Sources */,
 				FD0F888B1AE425220068B03A /* CardViewController.m in Sources */,
 				FD54406F1AF3A92A0068D644 /* BKTextViewKeyboardHider.m in Sources */,
 				FD7AB2CC1AE81E95005A4F4B /* PDFCard.m in Sources */,
@@ -690,12 +696,14 @@
 				FD7AB2D21AE81EB0005A4F4B /* TextCardAdder.m in Sources */,
 				FD7AB2CA1AE81E95005A4F4B /* LinkCard.m in Sources */,
 				FD7AB2DD1AE8CE16005A4F4B /* iCarousel.m in Sources */,
+				FD5440861AF648680068D644 /* EditCardPopup.m in Sources */,
 				FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */,
 				FD7AB2CD1AE81E95005A4F4B /* TextCard.m in Sources */,
 				FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */,
 				FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */,
 				FD7AB2CB1AE81E95005A4F4B /* Notification.m in Sources */,
 				FD5440731AF40BF20068D644 /* NotificationHandler.m in Sources */,
+				FD5440851AF648680068D644 /* AddCardPopup.m in Sources */,
 				FD0F88621AE424490068B03A /* AppDelegate.m in Sources */,
 				FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */,
 				FD5440651AF3A8DE0068D644 /* BKSoundNotifier.m in Sources */,
