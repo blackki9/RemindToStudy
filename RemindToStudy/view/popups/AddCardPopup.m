@@ -11,10 +11,7 @@
 #import "CardSaver.h"
 #import "CardsFactory.h"
 #import "GroupCard.h"
-#import "SetNotificationDatePopup.h"
-#import <NSDate+DateTools.h>
-#import "NotificationCenter.h"
-#import "BKTextFieldKeyboardHider.h"
+
 
 NSString* const addPopupIdentifier = @"AddCardPopup";
 const CGFloat addPopupWidth = 300.0f;
@@ -23,70 +20,33 @@ const CGFloat addPopupHeight = 400.0f;
 @interface AddCardPopup ()
 
 @property (strong, nonatomic) IBOutlet UITextField *cardNameField;
-@property (strong,nonatomic) NSDate* selectedDate;
 @property (strong, nonatomic) IBOutlet UIButton *dateButton;
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-@property (nonatomic, strong) BKTextFieldKeyboardHider* keyboardHider;
 
 @end
 
 @implementation AddCardPopup
 
-+ (AddCardPopup*)showAddPopupWithFinishHandler:(CardAddFinishHandler)finishHandler passBlock:(PassBlock)passBlock
++ (AddCardPopup*)showAddPopupWithFinishHandler:(CardPopupResultAction)finishHandler passBlock:(CardPopupPassDataBlock)passBlock
 {
-    AddCardPopup * viewController = (AddCardPopup*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:addPopupIdentifier];
-    viewController.finishHandler = finishHandler;
-    
-    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:CGSizeMake(addPopupWidth,
-                                                                                              addPopupHeight)
-                                                                    viewController:viewController];
-    
-    formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
-        passBlock(presentedFSViewController);
-    };
-    
-    formSheet.transitionStyle = MZFormSheetTransitionStyleSlideFromBottom;
-    [formSheet presentAnimated:YES completionHandler:nil];
-    
-    return viewController;
+    return (AddCardPopup*)[super showPopupWithId:addPopupIdentifier size:CGSizeMake(addPopupWidth,
+                                                              addPopupHeight) finishBlock:finishHandler passDataBlock:passBlock];
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupKeyboardHider];
-    [self updateDateButtonToCurrentDate];
-}
-
-- (void)setupKeyboardHider
-{
-    self.keyboardHider = [[BKTextFieldKeyboardHider alloc] init];
     
-    self.cardNameField = [self.keyboardHider addHidingKeyboardOnReturnAndSetDelegateForTextField:self.cardNameField];
-}
-
-- (void)updateDateButtonToCurrentDate
-{
-    self.selectedDate = [NSDate date];
-    [self updateDateButton];
-}
-
-- (void)updateDateButton
-{
-    NSString* dateString = [NSString stringWithFormat:@"Remind date: %@",[self.selectedDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"]];
-    [self.dateButton setTitle:dateString forState:UIControlStateNormal];
+    [super setDateButton:self.dateButton];
+    [self updateDateButtonToCurrentDate];
+    
+    [self setupKeyboardHiderForTextField:self.cardNameField];
 }
 
 - (IBAction)setNotificationDate:(id)sender
 {
-    __weak AddCardPopup* weakSelf = self;
-    [SetNotificationDatePopup showPopupWithCompletion:^(NSDate *selectedDate) {
-        NSLog(@"");
-        weakSelf.selectedDate = selectedDate;
-        [weakSelf updateDateButton];
-    }];
+    [self showDateScreen];
 }
 
 #pragma mark - setup UI
@@ -101,55 +61,26 @@ const CGFloat addPopupHeight = 400.0f;
 {
     NSDictionary* cardInfo = [self.adder collectInfoWithDelegate:self];
     [self.adder addCardWithInfo:cardInfo delegate:self];
-    if(self.finishHandler) {
-        self.finishHandler(YES);
-    }
-    [self hidePopup];
+   
+    [super performFinishBlockWithResult:YES];
+    [super hidePopup];
 }
 
 #pragma mark - hiding
 - (IBAction)cancel:(id)sender
 {
-    if(self.finishHandler) {
-        self.finishHandler(NO);
-    }
+    [super performFinishBlockWithResult:NO];
 
-    [self hidePopup];
-}
-
-- (void)hidePopup
-{
-    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
+    [super hidePopup];
 }
 
 #pragma mark - CardAdderDelegate
 
 - (void)cardSubmitted:(Card*)card
 {
-    card = [self setupNotificationForCard:card];
+    card = [self scheduleNotificationForCard:card notificationDate:self.selectedDate];
     [self.saver saveCard:card];
     [self.groupCard addCardsObject:card];
-}
-
-- (Card*)setupNotificationForCard:(Card*)card
-{
-    Card* result = card;
-    
-    Notification* notification = [[NotificationCenter sharedCenter] newNotification];
-    
-    notification.fireDate = self.selectedDate;
-    notification.text = [self notificationTextFromCard:result];
-    
-    result.notification = notification;
-    
-    [[NotificationCenter sharedCenter] scheduleNotification:notification];
-    
-    return result;
-}
-
-- (NSString*)notificationTextFromCard:(Card*)card
-{
-    return [NSString stringWithFormat:@"Please repeat card %@",card.cardName];
 }
 
 - (NSString*)cardName

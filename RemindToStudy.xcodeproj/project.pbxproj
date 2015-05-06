@@ -42,6 +42,8 @@
 		FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407E1AF551A70068D644 /* DisabledTouchesTextCardViewer.m */; };
 		FD5440851AF648680068D644 /* AddCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440821AF648680068D644 /* AddCardPopup.m */; };
 		FD5440861AF648680068D644 /* EditCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440841AF648680068D644 /* EditCardPopup.m */; };
+		FD5440891AF908330068D644 /* BaseCardPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440881AF908330068D644 /* BaseCardPopup.m */; };
+		FD54408C1AF910270068D644 /* CardNotificationScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54408B1AF910270068D644 /* CardNotificationScheduler.m */; };
 		FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7706B31AEE6AC700790B7D /* NotificationCenter.m */; };
 		FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2811AE81392005A4F4B /* DBManager.m */; };
 		FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2B41AE81657005A4F4B /* CardsFactory.m */; };
@@ -142,6 +144,10 @@
 		FD5440821AF648680068D644 /* AddCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardPopup.m; sourceTree = "<group>"; };
 		FD5440831AF648680068D644 /* EditCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCardPopup.h; sourceTree = "<group>"; };
 		FD5440841AF648680068D644 /* EditCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCardPopup.m; sourceTree = "<group>"; };
+		FD5440871AF908330068D644 /* BaseCardPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCardPopup.h; sourceTree = "<group>"; };
+		FD5440881AF908330068D644 /* BaseCardPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCardPopup.m; sourceTree = "<group>"; };
+		FD54408A1AF910270068D644 /* CardNotificationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardNotificationScheduler.h; sourceTree = "<group>"; };
+		FD54408B1AF910270068D644 /* CardNotificationScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardNotificationScheduler.m; sourceTree = "<group>"; };
 		FD7706B21AEE6AC700790B7D /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
 		FD7706B31AEE6AC700790B7D /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		FD7AB2801AE81392005A4F4B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -473,6 +479,10 @@
 				FD5440821AF648680068D644 /* AddCardPopup.m */,
 				FD5440831AF648680068D644 /* EditCardPopup.h */,
 				FD5440841AF648680068D644 /* EditCardPopup.m */,
+				FD5440871AF908330068D644 /* BaseCardPopup.h */,
+				FD5440881AF908330068D644 /* BaseCardPopup.m */,
+				FD54408A1AF910270068D644 /* CardNotificationScheduler.h */,
+				FD54408B1AF910270068D644 /* CardNotificationScheduler.m */,
 			);
 			path = popups;
 			sourceTree = "<group>";
@@ -679,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */,
+				FD54408C1AF910270068D644 /* CardNotificationScheduler.m in Sources */,
 				FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */,
 				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
 				FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */,
@@ -689,6 +700,7 @@
 				FD5440611AF3A8DE0068D644 /* BKNotificationCenterImp.m in Sources */,
 				FD54406E1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m in Sources */,
 				FD0F888B1AE425220068B03A /* CardViewController.m in Sources */,
+				FD5440891AF908330068D644 /* BaseCardPopup.m in Sources */,
 				FD54406F1AF3A92A0068D644 /* BKTextViewKeyboardHider.m in Sources */,
 				FD7AB2CC1AE81E95005A4F4B /* PDFCard.m in Sources */,
 				FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */,
@@ -844,7 +856,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8dec804-9f46-43e0-b071-57528176caf7";
+				PROVISIONING_PROFILE = "07f68a1b-6bcd-4cf3-82c8-332fa0b8949a";
 			};
 			name = Debug;
 		};
@@ -858,7 +870,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8dec804-9f46-43e0-b071-57528176caf7";
+				PROVISIONING_PROFILE = "07f68a1b-6bcd-4cf3-82c8-332fa0b8949a";
 			};
 			name = Release;
 		};

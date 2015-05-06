@@ -11,4 +11,6 @@
 
 @interface TextCardEditor : NSObject <CardEditor>
 
+- (instancetype)initWithCard:(Card*)card;
+
 @end

@@ -12,21 +12,22 @@
 @interface CardView ()
 
 @property (nonatomic, strong) id<CardViewer> currentViewer;
-@property (nonatomic, strong) id<CardEditor> currentEditor;
+@property (nonatomic, strong) EditButtonAction currentEditAction;
+
 @end
 
 @implementation CardView
 
-- (void)setupViewWithCardViewer:(id<CardViewer>)viewer
+- (void)setEditButtonAction:(EditButtonAction)action
 {
-
-    self.currentViewer = viewer;
-    [viewer addUIToContentView:self.contentView];
+    self.currentEditAction = action;
 }
 
-- (void)setupViewWithEditor:(id<CardEditor>)editor
+- (void)setupViewWithCardViewer:(id<CardViewer>)viewer
 {
-    
+    [self clearContent];
+    self.currentViewer = viewer;
+    [viewer addUIToContentView:self.contentView];
 }
 
 - (void)clearContent
@@ -34,9 +35,15 @@
     if(self.currentViewer) {
         [self.currentViewer clearContentView];
     }
-    if(self.currentEditor) {
-        //TODO clean editor
-    }
+}
+
+- (IBAction)edit:(id)sender {
+    self.currentEditAction(self.cardIndex);
+}
+
+- (void)hideEditButton
+{
+    
 }
 
 

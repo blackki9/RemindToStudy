@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardEditor.h"
+#import "BaseCardPopup.h"
 
-@interface EditCardPopup : UIViewController
+@interface EditCardPopup : BaseCardPopup
+
++ (EditCardPopup*)showEditPopupWithFinishHandler:(CardPopupResultAction)finishBlock passBlock:(CardPopupPassDataBlock)passBlock;
+
+- (void)setupUIWithEditor:(id<CardEditor>)editor;
 
 @end

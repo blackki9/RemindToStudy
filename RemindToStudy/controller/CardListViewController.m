@@ -8,10 +8,9 @@
 
 #import "CardListViewController.h"
 #import "GroupCard.h"
+#import "CardView.h"
 #import "CardLoader.h"
 #import "CardLoaderImplementation.h"
-#import "CardView.h"
-#import <MZFormSheetController.h>
 #import "AddCardPopup.h"
 #import "CardSaverImplementation.h"
 #import "CardAdderFactory.h"
@@ -20,6 +19,8 @@
 #import "Constants.h"
 #import "CardViewerFactory.h"
 #import "CardViewController.h"
+#import "CardNotificationScheduler.h"
+#import "EditCardPopup.h"
 
 const CGFloat carouselItemWidth = 320.0f;
 const CGFloat carouselItemXMargin = 20.0f;
@@ -35,6 +36,7 @@ NSString* const cardViewNibName = @"CardView";
 @property (nonatomic, strong) NSMutableArray* currentCards;
 @property (nonatomic, strong) id<CardSaver> saver;
 @property (nonatomic, strong) Card* currentCardToShow;
+@property (nonatomic, strong) EditButtonAction cardViewEditAction;
 
 @end
 
@@ -55,6 +57,23 @@ NSString* const cardViewNibName = @"CardView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.carousel.pagingEnabled = YES;
+    
+    [self setupEditAction];
+}
+- (void)setupEditAction
+{
+    __weak CardListViewController* weakSelf = self;
+    self.cardViewEditAction = ^(NSInteger cardIndex) {
+        [weakSelf showEditViewForIndex:cardIndex];
+    };
+}
+- (void)showEditViewForIndex:(NSInteger)index
+{
+    [EditCardPopup showEditPopupWithFinishHandler:^(BOOL result) {
+        
+    } passBlock:^(UIViewController *controller) {
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,12 +83,10 @@ NSString* const cardViewNibName = @"CardView";
 
     [self loadCards];
 }
-
 - (void)registerToNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:kCardHandlerNotification object:nil];
 }
-
 - (void)loadCards
 {
     if(!self.baseGroupCard) {
@@ -81,13 +98,11 @@ NSString* const cardViewNibName = @"CardView";
     [self.carousel reloadData];
 }
 
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self unregisterToNotifications];
 }
-
 - (void)unregisterToNotifications
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -115,17 +130,15 @@ NSString* const cardViewNibName = @"CardView";
 
 - (UIView*)setupCarouselView:(UIView*)view index:(NSInteger)index
 {
-    UIView* result = view;
+    CardView* result = (CardView*)view;
     if (result== nil)
     {
         result = [self newCardView];
+        [result setEditButtonAction:self.cardViewEditAction];
     }
     
-    
-    CardView* remindCardView = (CardView*)result;
-    
     Card* card = self.currentCards[index];
-    remindCardView = [self setupCardView:remindCardView card:card];
+    result = [self setupCardView:result card:card];
  
     return result;
 }
@@ -189,7 +202,7 @@ NSString* const cardViewNibName = @"CardView";
 - (void)showAddController
 {
     __weak CardListViewController* weakSelf = self;
-   __block AddCardPopup* popup = [AddCardPopup showAddPopupWithFinishHandler:^(BOOL result) {
+   [AddCardPopup showAddPopupWithFinishHandler:^(BOOL result) {
        if(result) {
            [weakSelf loadCards];
        }
@@ -204,6 +217,7 @@ NSString* const cardViewNibName = @"CardView";
     addPopup.saver = self.saver;
     addPopup.groupCard = self.baseGroupCard;
     addPopup.adder = [CardAdderFactory adderForType:kTextAdder]; // TODO add chooser for types
+    [addPopup setNotificationScheduler:[CardNotificationScheduler new]];
     [addPopup updateUIWithCurrentAdder];
     
     return addPopup;

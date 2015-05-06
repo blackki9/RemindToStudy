@@ -8,23 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <MZFormSheetController.h>
+#import "BaseCardPopup.h"
 
 @protocol CardAdder;
 @protocol CardAdderDelegate;
 @protocol CardSaver;
 @class GroupCard;
 
-typedef void (^CardAddFinishHandler) (BOOL result);
-typedef void (^PassBlock) (UIViewController* controller);
 
-@interface AddCardPopup : MZFormSheetController <CardAdderDelegate>
+@interface AddCardPopup : BaseCardPopup <CardAdderDelegate>
 
 @property (nonatomic,strong) id<CardAdder> adder;
 @property (nonatomic, strong) id<CardSaver> saver; // should be passed here
 @property (nonatomic, strong) GroupCard* groupCard;
-@property (nonatomic, strong) CardAddFinishHandler finishHandler;
+
 - (void)updateUIWithCurrentAdder;
 
-+ (AddCardPopup*)showAddPopupWithFinishHandler:(CardAddFinishHandler)finishHandler passBlock:(PassBlock)passBlock;
++ (AddCardPopup*)showAddPopupWithFinishHandler:(CardPopupResultAction)finishHandler passBlock:(CardPopupPassDataBlock)passBlock;
 
 @end

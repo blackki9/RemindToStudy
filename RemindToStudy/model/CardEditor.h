@@ -9,8 +9,22 @@
 #ifndef RemindToStudy_CardEditor_h
 #define RemindToStudy_CardEditor_h
 
+@class Card;
+@class UIView;
+
+@protocol CardEditorDelegate <NSObject>
+
+- (NSDictionary*)collectedInfoForCard;
+
+@end
+
 @protocol CardEditor <NSObject>
 
+- (void)saveChanges;
+- (void)setCard:(Card*)card;
+- (void)setDelegate:(id<CardEditorDelegate>)delegate;
+
+- (void)setupUIWithContentView:(UIView*)contentView;
 
 @end
 
