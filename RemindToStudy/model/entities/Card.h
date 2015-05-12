@@ -20,6 +20,10 @@
 
 + (Card*)newCard;
 - (NSString*)cardType;
+
+- (NSDate*)fireDate;
+- (void)setFireDate:(NSDate*)fireDate;
+
 @end
 
 @interface Card (CoreDataGeneratedAccessors)

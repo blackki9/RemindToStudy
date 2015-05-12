@@ -21,8 +21,8 @@ const CGFloat editPopupHeight = 460;
 @property (strong, nonatomic) IBOutlet UIButton *dateButton;
 
 @property (nonatomic, strong) id<CardEditor> editor;
-
-
+@property (nonatomic, strong) id<CardSaver> saver;
+@property (nonatomic, strong) id<CardRemover> remover;
 @end
 
 @implementation EditCardPopup
@@ -37,6 +37,12 @@ const CGFloat editPopupHeight = 460;
     return CGSizeMake(editPopupWidth, editPopupHeight);
 }
 
+- (void)setCardSaver:(id<CardSaver>)saver
+{
+    self.saver = saver;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super setDateButton:self.dateButton];
@@ -48,6 +54,8 @@ const CGFloat editPopupHeight = 460;
 - (void)setupUIWithEditor:(id<CardEditor>)editor
 {
     self.editor = editor;
+    [self.editor setDelegate:self];
+    [self.editor setupUIWithContentView:self.contentView];
 }
 
 - (IBAction)cancel:(id)sender {
@@ -59,6 +67,34 @@ const CGFloat editPopupHeight = 460;
     [self.editor saveChanges];
     [self performFinishBlockWithResult:YES];
     [self hidePopup];
+}
+
+- (IBAction)deleteCard:(id)sender {
+    [self.editor removeCard];
+}
+
+- (IBAction)notificationDatePopupShow:(id)sender {
+    [self showDateScreen];
+}
+#pragma mark - card editor delegate
+- (NSDictionary*)collectedInfoForCard
+{
+    NSDictionary* dictionary = @{@"cardName":self.cardName.text,
+                                 @"fireDate:":self.selectedDate};
+    
+    return dictionary;
+}
+
+- (void)saveCard:(Card*)card
+{
+    [self.saver saveCard:card];
+}
+
+- (void)setUpWithName:(NSString*)cardName fireDate:(NSDate*)fireDate
+{
+    self.cardName.text = cardName;
+    self.selectedDate = fireDate;
+    [self updateDateButton];
 }
 
 @end

@@ -11,10 +11,12 @@
 
 @class Card;
 @class UIView;
-
+@protocol CardRemover;
 @protocol CardEditorDelegate <NSObject>
 
 - (NSDictionary*)collectedInfoForCard;
+- (void)saveCard:(Card*)card;
+- (void)setUpWithName:(NSString*)cardName fireDate:(NSDate*)fireDate;
 
 @end
 
@@ -23,6 +25,8 @@
 - (void)saveChanges;
 - (void)setCard:(Card*)card;
 - (void)setDelegate:(id<CardEditorDelegate>)delegate;
+- (void)removeCard;
+- (void)setCardRemover:(id<CardRemover>)remover;
 
 - (void)setupUIWithContentView:(UIView*)contentView;
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CardEditor.h"
+#import "CardRemover.h"
 
 @interface TextCardEditor : NSObject <CardEditor>
 

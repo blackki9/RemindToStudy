@@ -99,18 +99,12 @@
                     <exclude reference="xG2-IX-t3u"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="5jU-Td-MmE"/>
-                    <exclude reference="GSe-H6-9GJ"/>
-                    <exclude reference="otL-fN-PCj"/>
                     <exclude reference="RXu-b3-X3f"/>
                     <exclude reference="fCa-9P-dPZ"/>
                     <exclude reference="izP-Jk-wJH"/>
-                    <exclude reference="50w-UT-pSJ"/>
-                    <exclude reference="9c8-0Z-PHD"/>
-                    <exclude reference="eye-4M-kIw"/>
-                    <exclude reference="zut-Al-TXy"/>
-                    <exclude reference="HCc-qk-Qos"/>
-                    <exclude reference="L7v-Wr-TEm"/>
+                    <exclude reference="5jU-Td-MmE"/>
+                    <exclude reference="GSe-H6-9GJ"/>
+                    <exclude reference="otL-fN-PCj"/>
                     <exclude reference="9y1-ub-jFU"/>
                     <exclude reference="JdF-do-hzl"/>
                     <exclude reference="TDz-h8-Biv"/>
@@ -118,6 +112,12 @@
                     <exclude reference="KBd-61-TNt"/>
                     <exclude reference="flS-Bp-Qvl"/>
                     <exclude reference="yhx-e0-NQK"/>
+                    <exclude reference="HCc-qk-Qos"/>
+                    <exclude reference="L7v-Wr-TEm"/>
+                    <exclude reference="50w-UT-pSJ"/>
+                    <exclude reference="9c8-0Z-PHD"/>
+                    <exclude reference="eye-4M-kIw"/>
+                    <exclude reference="zut-Al-TXy"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -130,18 +130,12 @@
                     <include reference="xG2-IX-t3u"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="5jU-Td-MmE"/>
-                    <include reference="GSe-H6-9GJ"/>
-                    <include reference="otL-fN-PCj"/>
                     <include reference="RXu-b3-X3f"/>
                     <include reference="fCa-9P-dPZ"/>
                     <include reference="izP-Jk-wJH"/>
-                    <include reference="50w-UT-pSJ"/>
-                    <include reference="9c8-0Z-PHD"/>
-                    <include reference="eye-4M-kIw"/>
-                    <include reference="zut-Al-TXy"/>
-                    <include reference="HCc-qk-Qos"/>
-                    <include reference="L7v-Wr-TEm"/>
+                    <include reference="5jU-Td-MmE"/>
+                    <include reference="GSe-H6-9GJ"/>
+                    <include reference="otL-fN-PCj"/>
                     <include reference="9y1-ub-jFU"/>
                     <include reference="JdF-do-hzl"/>
                     <include reference="TDz-h8-Biv"/>
@@ -149,6 +143,12 @@
                     <include reference="KBd-61-TNt"/>
                     <include reference="flS-Bp-Qvl"/>
                     <include reference="yhx-e0-NQK"/>
+                    <include reference="HCc-qk-Qos"/>
+                    <include reference="L7v-Wr-TEm"/>
+                    <include reference="50w-UT-pSJ"/>
+                    <include reference="9c8-0Z-PHD"/>
+                    <include reference="eye-4M-kIw"/>
+                    <include reference="zut-Al-TXy"/>
                 </mask>
             </variation>
             <connections>

@@ -38,7 +38,9 @@
 }
 
 - (IBAction)edit:(id)sender {
-    self.currentEditAction(self.cardIndex);
+    if(self.currentEditAction) {
+        self.currentEditAction(self.cardIndex);
+    }
 }
 
 - (void)hideEditButton

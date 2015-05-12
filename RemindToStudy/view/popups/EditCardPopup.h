@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "CardEditor.h"
 #import "BaseCardPopup.h"
+#import "CardSaver.h"
+#import "CardRemover.h"
 
-@interface EditCardPopup : BaseCardPopup
+@interface EditCardPopup : BaseCardPopup <CardEditorDelegate>
 
 + (EditCardPopup*)showEditPopupWithFinishHandler:(CardPopupResultAction)finishBlock passBlock:(CardPopupPassDataBlock)passBlock;
 
 - (void)setupUIWithEditor:(id<CardEditor>)editor;
+- (void)setCardSaver:(id<CardSaver>)saver;
 
 @end

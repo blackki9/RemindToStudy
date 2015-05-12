@@ -18,7 +18,7 @@
 
 @implementation SetNotificationDatePopup
 
-+ (void)showPopupWithCompletion:(NotificationSetCompletion)finishBlock
++ (SetNotificationDatePopup*)showPopupWithCompletion:(NotificationSetCompletion)finishBlock
 {
     SetNotificationDatePopup * viewController = (SetNotificationDatePopup*) [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"SetNotificationDatePopup"];
     
@@ -31,10 +31,10 @@
         [viewController setCompletionBlock:finishBlock];
     };
     
-    
     formSheet.transitionStyle = MZFormSheetTransitionStyleSlideAndBounceFromLeft;
     [formSheet presentAnimated:YES completionHandler:nil];
     
+    return viewController;
 }
 
 - (void)viewDidLoad {

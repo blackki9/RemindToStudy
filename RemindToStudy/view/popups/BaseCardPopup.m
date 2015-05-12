@@ -18,6 +18,7 @@
 @property (nonatomic, strong) BKTextFieldKeyboardHider* keyboardHider;
 @property (nonatomic, strong) UIButton* currentDateButton;
 @property (nonatomic, strong) CardNotificationScheduler* scheduler;
+@property (nonatomic, strong) SetNotificationDatePopup* datePopup;
 
 @end
 
@@ -51,6 +52,7 @@
 
 - (void)hidePopup
 {
+    [self.datePopup hidePopup];
     [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
 }
 
@@ -65,8 +67,7 @@
 - (void)showDateScreen
 {
     __weak BaseCardPopup* weakSelf = self;
-    [SetNotificationDatePopup showPopupWithCompletion:^(NSDate *selectedDate) {
-
+    self.datePopup = [SetNotificationDatePopup showPopupWithCompletion:^(NSDate *selectedDate) {
         [weakSelf setSelectedDate:selectedDate];
         [weakSelf updateDateButton];
     }];

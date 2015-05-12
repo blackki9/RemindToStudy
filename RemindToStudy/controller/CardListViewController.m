@@ -21,6 +21,7 @@
 #import "CardViewController.h"
 #import "CardNotificationScheduler.h"
 #import "EditCardPopup.h"
+#import "CardEditorFactory.h"
 
 const CGFloat carouselItemWidth = 320.0f;
 const CGFloat carouselItemXMargin = 20.0f;
@@ -69,10 +70,12 @@ NSString* const cardViewNibName = @"CardView";
 }
 - (void)showEditViewForIndex:(NSInteger)index
 {
+    Card* card = self.currentCards[index];
     [EditCardPopup showEditPopupWithFinishHandler:^(BOOL result) {
         
     } passBlock:^(UIViewController *controller) {
-        
+        EditCardPopup* popup = (EditCardPopup*)controller;
+        [popup setupUIWithEditor:[CardEditorFactory cardEditorForCard:card]];
     }];
 }
 
@@ -134,19 +137,20 @@ NSString* const cardViewNibName = @"CardView";
     if (result== nil)
     {
         result = [self newCardView];
-        [result setEditButtonAction:self.cardViewEditAction];
     }
     
     Card* card = self.currentCards[index];
     result = [self setupCardView:result card:card];
- 
+    result.cardIndex = index;
+    
     return result;
 }
 
 - (CardView*)newCardView
 {
     CardView* result = [[[NSBundle mainBundle] loadNibNamed:cardViewNibName owner:self options:nil] objectAtIndex:0];
-    
+    [result setEditButtonAction:self.cardViewEditAction];
+
     result.frame = [self cardViewFrame];
 
     return result;
@@ -166,6 +170,7 @@ NSString* const cardViewNibName = @"CardView";
     cardView.cardNameLabel.text = card.cardName;
     cardView.typeLabel.text = [card cardType];
     cardView.dateLabel.text = [card.notification.fireDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
+    [cardView setEditButtonAction:self.cardViewEditAction];
 
     id<CardViewer> viewer = [CardViewerFactory viewerWithDisabledTouchesForCard:card];
     [cardView setupViewWithCardViewer:viewer];

@@ -29,4 +29,14 @@
     return nil;
 }
 
+- (NSDate*)fireDate
+{
+    return self.notification.fireDate;
+}
+
+- (void)setFireDate:(NSDate*)fireDate
+{
+    self.notification.fireDate = fireDate;
+}
+
 @end
