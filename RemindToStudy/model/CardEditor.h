@@ -17,6 +17,7 @@
 - (NSDictionary*)collectedInfoForCard;
 - (void)saveCard:(Card*)card;
 - (void)setUpWithName:(NSString*)cardName fireDate:(NSDate*)fireDate;
+- (void)cardRemoved;
 
 @end
 

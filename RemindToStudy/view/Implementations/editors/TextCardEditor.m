@@ -20,6 +20,7 @@
 @property (nonatomic, strong) BKTextViewKeyboardHider* keyboardHider;
 @property (nonatomic, weak) id<CardEditorDelegate> currentDelegate;
 @property (nonatomic, strong) id<CardRemover> remover;
+
 @end
 
 @implementation TextCardEditor
@@ -89,11 +90,18 @@
     NSDictionary* cardInfo = [self.currentDelegate collectedInfoForCard];
     self.currentCard.cardName = cardInfo[@"cardName"]; //TODO change magic string to constant
     [self.currentCard setFireDate:cardInfo[@"fireDate"]];
+    [self.currentDelegate saveCard:self.currentCard];
+}
+
+- (void)removeCard
+{
+    [self.remover removeCard:self.currentCard];
+    [self.currentDelegate cardRemoved];
 }
 
 - (void)setCard:(Card*)card
 {
-    self.currentCard = card;
+    self.currentCard = (TextCard*)card;
 }
 
 - (void)setDelegate:(id<CardEditorDelegate>)delegate
@@ -101,9 +109,5 @@
     self.currentDelegate = delegate;
 }
 
-- (void)removeCard
-{
-    [self.remover removeCard:self.currentCard];
-}
 
 @end

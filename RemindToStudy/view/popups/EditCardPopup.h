@@ -12,11 +12,14 @@
 #import "CardSaver.h"
 #import "CardRemover.h"
 
+typedef void (^RemoveCardHandler) ();
+
 @interface EditCardPopup : BaseCardPopup <CardEditorDelegate>
 
 + (EditCardPopup*)showEditPopupWithFinishHandler:(CardPopupResultAction)finishBlock passBlock:(CardPopupPassDataBlock)passBlock;
 
 - (void)setupUIWithEditor:(id<CardEditor>)editor;
 - (void)setCardSaver:(id<CardSaver>)saver;
+- (void)setRemoveCardHandler:(RemoveCardHandler)handler;
 
 @end

@@ -23,6 +23,9 @@ const CGFloat editPopupHeight = 460;
 @property (nonatomic, strong) id<CardEditor> editor;
 @property (nonatomic, strong) id<CardSaver> saver;
 @property (nonatomic, strong) id<CardRemover> remover;
+
+@property (nonatomic, strong) RemoveCardHandler currentRemoveHandler;
+
 @end
 
 @implementation EditCardPopup
@@ -41,7 +44,10 @@ const CGFloat editPopupHeight = 460;
 {
     self.saver = saver;
 }
-
+- (void)setRemoveCardHandler:(RemoveCardHandler)handler
+{
+    self.currentRemoveHandler = handler;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,6 +101,13 @@ const CGFloat editPopupHeight = 460;
     self.cardName.text = cardName;
     self.selectedDate = fireDate;
     [self updateDateButton];
+}
+
+- (void)cardRemoved
+{
+    self.currentRemoveHandler();
+    [self.saver saveCard:nil];
+    [self hidePopup];
 }
 
 @end
