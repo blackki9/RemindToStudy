@@ -60,6 +60,8 @@
 		FD7AB2DD1AE8CE16005A4F4B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7AB2DC1AE8CE16005A4F4B /* iCarousel.m */; };
 		FD8D4BFE1AE8D74F004C3C53 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8D4BFD1AE8D74F004C3C53 /* CardView.m */; };
 		FD8D4C001AE8D767004C3C53 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD8D4BFF1AE8D767004C3C53 /* CardView.xib */; };
+		FD8E040C1B07807F006D9348 /* CardSorterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E040B1B07807F006D9348 /* CardSorterImplementation.m */; };
+		FD8E04101B08BB90006D9348 /* CardCarouselDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E040F1B08BB90006D9348 /* CardCarouselDataSource.m */; };
 		FDF7B0101AFF863000920388 /* CardEditorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7B00F1AFF863000920388 /* CardEditorFactory.m */; };
 		FDF7B0141AFF9F6700920388 /* CardRemoverImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */; };
 /* End PBXBuildFile section */
@@ -181,6 +183,11 @@
 		FD8D4BFC1AE8D74F004C3C53 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		FD8D4BFD1AE8D74F004C3C53 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		FD8D4BFF1AE8D767004C3C53 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		FD8E04091B078050006D9348 /* CardSorter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSorter.h; sourceTree = "<group>"; };
+		FD8E040A1B07807F006D9348 /* CardSorterImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSorterImplementation.h; sourceTree = "<group>"; };
+		FD8E040B1B07807F006D9348 /* CardSorterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSorterImplementation.m; sourceTree = "<group>"; };
+		FD8E040E1B08BB90006D9348 /* CardCarouselDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCarouselDataSource.h; sourceTree = "<group>"; };
+		FD8E040F1B08BB90006D9348 /* CardCarouselDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCarouselDataSource.m; sourceTree = "<group>"; };
 		FDF7B00E1AFF863000920388 /* CardEditorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardEditorFactory.h; sourceTree = "<group>"; };
 		FDF7B00F1AFF863000920388 /* CardEditorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardEditorFactory.m; sourceTree = "<group>"; };
 		FDF7B0111AFF9F5900920388 /* CardRemover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardRemover.h; sourceTree = "<group>"; };
@@ -298,6 +305,7 @@
 		FD0F88821AE424C30068B03A /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FD8E040D1B08BABB006D9348 /* carouselDataSource */,
 				FD0F88861AE424DA0068B03A /* CardListViewController.h */,
 				FD0F88871AE424DA0068B03A /* CardListViewController.m */,
 				FD0F88891AE425220068B03A /* CardViewController.h */,
@@ -325,6 +333,7 @@
 				FDF7B0111AFF9F5900920388 /* CardRemover.h */,
 				FDF7B0121AFF9F6700920388 /* CardRemoverImpl.h */,
 				FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */,
+				FD8E04091B078050006D9348 /* CardSorter.h */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -363,6 +372,8 @@
 				FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */,
 				FD0F88CA1AE42D4F0068B03A /* CardLoaderImplementation.h */,
 				FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */,
+				FD8E040A1B07807F006D9348 /* CardSorterImplementation.h */,
+				FD8E040B1B07807F006D9348 /* CardSorterImplementation.m */,
 			);
 			path = implementations;
 			sourceTree = "<group>";
@@ -563,6 +574,15 @@
 			path = cardView;
 			sourceTree = "<group>";
 		};
+		FD8E040D1B08BABB006D9348 /* carouselDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				FD8E040E1B08BB90006D9348 /* CardCarouselDataSource.h */,
+				FD8E040F1B08BB90006D9348 /* CardCarouselDataSource.m */,
+			);
+			path = carouselDataSource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -704,6 +724,8 @@
 				FD54408C1AF910270068D644 /* CardNotificationScheduler.m in Sources */,
 				FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */,
 				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
+				FD8E040C1B07807F006D9348 /* CardSorterImplementation.m in Sources */,
+				FD8E04101B08BB90006D9348 /* CardCarouselDataSource.m in Sources */,
 				FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */,
 				FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */,
 				FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */,

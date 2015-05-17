@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 #import <MZFormSheetController.h>
+#import "CardSorter.h"
 
-@interface CardListViewController : MZFormSheetController <iCarouselDelegate, iCarouselDataSource>
+@interface CardListViewController : MZFormSheetController <iCarouselDelegate>
+
+@property (nonatomic, strong) id<CardSorter> sorter;
 
 @end

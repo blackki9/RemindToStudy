@@ -11,24 +11,23 @@
 #import "NotificationCenter.h"
 #import "NotificationHandler.h"
 
-@interface AppDelegate ()
-
-@end
-
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
     [DBManager sharedManager];
     
     [[NotificationCenter sharedCenter] initializeWithApplication:application];
-    
     [[NotificationCenter sharedCenter] setNotificationHandler:[self handlerForNotifications]];
+    
+    [self injectCardManagersToListController];
     
     return YES;
 }
-
+- (void)injectCardManagersToListController
+{
+    
+}
 - (NotificationHandler*)handlerForNotifications
 {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];

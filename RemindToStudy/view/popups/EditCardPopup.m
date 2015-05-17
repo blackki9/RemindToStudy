@@ -86,7 +86,7 @@ const CGFloat editPopupHeight = 460;
 - (NSDictionary*)collectedInfoForCard
 {
     NSDictionary* dictionary = @{@"cardName":self.cardName.text,
-                                 @"fireDate:":self.selectedDate};
+                                 @"fireDate":self.selectedDate};
     
     return dictionary;
 }

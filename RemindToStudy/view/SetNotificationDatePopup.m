@@ -39,7 +39,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self limitDatePickerToCurrentDate];
     // Do any additional setup after loading the view from its nib.
+}
+- (void)limitDatePickerToCurrentDate
+{
+    self.datePicker.minimumDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning {

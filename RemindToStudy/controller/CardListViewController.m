@@ -22,22 +22,21 @@
 #import "CardNotificationScheduler.h"
 #import "EditCardPopup.h"
 #import "CardEditorFactory.h"
+#import "CardSorterImplementation.h"
+#import "CardCarouselDataSource.h"
 
-const CGFloat carouselItemWidth = 320.0f;
-const CGFloat carouselItemXMargin = 20.0f;
 
-NSString* const cardViewControllerSegueKey = @"CardViewSegue";
-NSString* const cardViewNibName = @"CardView";
 
 @interface CardListViewController ()
 
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
+@property (strong, nonatomic) IBOutlet UIView *addFirstCardView;
 @property (nonatomic, strong) GroupCard* baseGroupCard;
 @property (nonatomic, strong) id<CardLoader> loader;
 @property (nonatomic, strong) NSMutableArray* currentCards;
 @property (nonatomic, strong) id<CardSaver> saver;
 @property (nonatomic, strong) Card* currentCardToShow;
-@property (nonatomic, strong) EditButtonAction cardViewEditAction;
+@property (nonatomic, strong) CardCarouselDataSource* dataSource;
 
 @end
 
@@ -51,12 +50,15 @@ NSString* const cardViewNibName = @"CardView";
         _loader = [[CardLoaderImplementation alloc] init];
         _saver = [[CardSaverImplementation alloc] init];
         _currentCards = [NSMutableArray array];
+        _sorter = [[CardSorterImplementation alloc] init];
+        _dataSource = [[CardCarouselDataSource alloc] initWithCards:_currentCards];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.carousel.dataSource = self.dataSource;
     self.carousel.pagingEnabled = YES;
     
     [self setupEditAction];
@@ -64,16 +66,18 @@ NSString* const cardViewNibName = @"CardView";
 - (void)setupEditAction
 {
     __weak CardListViewController* weakSelf = self;
-    self.cardViewEditAction = ^(NSInteger cardIndex) {
+    [self.dataSource setCardViewEditAction:^(NSInteger cardIndex) {
         [weakSelf showEditViewForIndex:cardIndex];
-    };
+    }];
 }
 - (void)showEditViewForIndex:(NSInteger)index
 {
     Card* card = self.currentCards[index];
     __weak CardListViewController* weakSelf = self;
     [EditCardPopup showEditPopupWithFinishHandler:^(BOOL result) {
-        [weakSelf.carousel reloadItemAtIndex:index animated:YES];
+        if(result) {
+            [weakSelf.carousel reloadItemAtIndex:index animated:YES];
+        }
     } passBlock:^(UIViewController *controller) {
         EditCardPopup* popup = (EditCardPopup*)controller;
         popup = [weakSelf setupEditPopup:popup card:card];
@@ -87,15 +91,21 @@ NSString* const cardViewNibName = @"CardView";
     [popup setRemoveCardHandler:^{
         [weakSelf.currentCards removeObject:card];
         [weakSelf.carousel reloadData];
+        [weakSelf showAddFirstButtonIfThereNoCards];
     }];
 
     return popup;
+}
+- (void)showAddFirstButtonIfThereNoCards
+{
+    if(self.currentCards.count == 0) {
+        self.addFirstCardView.hidden = NO;
+    }
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self registerToNotifications];
-
     [self loadCards];
 }
 - (void)registerToNotifications
@@ -108,9 +118,9 @@ NSString* const cardViewNibName = @"CardView";
         self.baseGroupCard = [self.loader loadBaseList];
     }
     
-    self.currentCards = [NSMutableArray arrayWithArray:[self.baseGroupCard.cards allObjects]];
-    
-    [self.carousel reloadData];
+    self.currentCards = [NSMutableArray arrayWithArray:[self.sorter sortedCardsByNotificationDateForGroupCard:self.baseGroupCard]];
+    [self hideAddFirstCardButtonIfThereMoreThanZeroCards];
+    [self.dataSource setCardsAndReload:self.currentCards];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -123,87 +133,32 @@ NSString* const cardViewNibName = @"CardView";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - icarousel data source
-
-- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
-{
-    return [self.currentCards count];
-}
+#pragma mark - icarousel delegate
 
 - (CGFloat)carouselItemWidth:(iCarousel *)carousel
 {
-    return carouselItemWidth;
-    
+    return [self.dataSource cardItemWidth];
 }
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
-{
-    UIView* result = [self setupCarouselView:view index:index];
-    
-    return result;
-}
-- (UIView*)setupCarouselView:(UIView*)view index:(NSInteger)index
-{
-    CardView* result = (CardView*)view;
-    if (result== nil)
-    {
-        result = [self newCardView];
-    }
-    
-    Card* card = self.currentCards[index];
-    result = [self setupCardView:result card:card];
-    result.cardIndex = index;
-    
-    return result;
-}
-- (CardView*)newCardView
-{
-    CardView* result = [[[NSBundle mainBundle] loadNibNamed:cardViewNibName owner:self options:nil] objectAtIndex:0];
-    [result setEditButtonAction:self.cardViewEditAction];
-    result.frame = [self cardViewFrame];
-
-    return result;
-}
-- (CGRect)cardViewFrame
-{
-    //TODO implement handling size for different screens
-    return  CGRectMake(0,
-                       0,
-                       carouselItemWidth - carouselItemXMargin,
-                       500);
-}
-
-- (CardView*)setupCardView:(CardView*)cardView card:(Card*)card
-{
-    cardView.cardNameLabel.text = card.cardName;
-    cardView.typeLabel.text = [card cardType];
-    cardView.dateLabel.text = [card.notification.fireDate formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
-    [cardView setEditButtonAction:self.cardViewEditAction];
-
-    id<CardViewer> viewer = [CardViewerFactory viewerWithDisabledTouchesForCard:card];
-    [cardView setupViewWithCardViewer:viewer];
-    
-    return cardView;
-}
-
-#pragma mark - icarousel delegate
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
     Card* cardToShow = self.currentCards[index];
     [self showCard:cardToShow];
 }
-
 - (void)showCard:(Card*)card
 {
     self.currentCardToShow = card;
-    CardView * cardView = [self newCardView];
+    CardView * cardView = [self.dataSource newCardView];
     cardView.cardIndex = [self.currentCards indexOfObject:card];
-    cardView = [self setupCardView:cardView card:card];
+    cardView = [self.dataSource setupCardView:cardView card:card];
     
     [CardViewController showCardPopupWithCardView:cardView];
 }
 
 #pragma mark - add
+- (IBAction)addFirstCard:(id)sender {
+    [self addCard:sender];
+}
 - (IBAction)addCard:(id)sender {
     [self showAddController];
 }
@@ -215,10 +170,17 @@ NSString* const cardViewNibName = @"CardView";
    [AddCardPopup showAddPopupWithFinishHandler:^(BOOL result) {
        if(result) {
            [weakSelf loadCards];
+           [weakSelf hideAddFirstCardButtonIfThereMoreThanZeroCards];
        }
    } passBlock:^(UIViewController* controller) {
        [weakSelf setupAddCardPopup:(AddCardPopup*)controller];
    }];
+}
+- (void)hideAddFirstCardButtonIfThereMoreThanZeroCards
+{
+    if(self.currentCards.count > 0) {
+        self.addFirstCardView.hidden = YES;
+    }
 }
 - (AddCardPopup*)setupAddCardPopup:(AddCardPopup*)addPopup
 {
