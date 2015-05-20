@@ -64,6 +64,11 @@
 {
     return [self.scheduler scheduleNotificationForCard:card notificationDate:date];
 }
+- (Card*)rescheduleNotificationForCard:(Card*)card notificationDate:(NSDate*)date
+{
+    return [self.scheduler resheduleNotificationForCard:card notificationDate:date];
+}
+
 - (void)showDateScreen
 {
     __weak BaseCardPopup* weakSelf = self;

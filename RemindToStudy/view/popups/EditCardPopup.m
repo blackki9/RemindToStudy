@@ -9,6 +9,7 @@
 #import "EditCardPopup.h"
 #import "BKTextFieldKeyboardHider.h"
 #import <MZFormSheetController.h>
+#import "Card.h"
 
 NSString* const editPopupStoryboardId = @"EditCardPopup";
 const CGFloat editPopupWidth = 300;
@@ -93,6 +94,7 @@ const CGFloat editPopupHeight = 460;
 
 - (void)saveCard:(Card*)card
 {
+    [self rescheduleNotificationForCard:card notificationDate:[card fireDate]];
     [self.saver saveCard:card];
 }
 

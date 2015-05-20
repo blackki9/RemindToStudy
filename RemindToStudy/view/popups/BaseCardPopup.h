@@ -30,6 +30,7 @@ typedef void (^CardPopupPassDataBlock) (UIViewController* controller);
 
 - (void)setNotificationScheduler:(CardNotificationScheduler*)scheduler;
 - (Card*)scheduleNotificationForCard:(Card*)card notificationDate:(NSDate *)date;
+- (Card*)rescheduleNotificationForCard:(Card*)card notificationDate:(NSDate*)date;
 - (void)showDateScreen;
 
 - (void)hidePopup;

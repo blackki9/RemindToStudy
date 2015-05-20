@@ -12,5 +12,6 @@
 @interface CardNotificationScheduler : NSObject
 
 - (Card*)scheduleNotificationForCard:(Card*)card notificationDate:(NSDate*)date;
+- (Card*)resheduleNotificationForCard:(Card*)card notificationDate:(NSDate*)date;
 
 @end

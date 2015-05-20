@@ -80,6 +80,7 @@
 		6E5E81804DE582639E861563 /* Pods-RemindToStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindToStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindToStudy/Pods-RemindToStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		6FE4C267658231E28DE0D918 /* libPods-RemindToStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RemindToStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9F000E1FB55B3C738E80D8 /* Pods-RemindToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindToStudy/Pods-RemindToStudy.release.xcconfig"; sourceTree = "<group>"; };
+		FD04ED2B1B0D1BBE000D958A /* ModelConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelConstants.h; sourceTree = "<group>"; };
 		FD0F88591AE424490068B03A /* RemindToStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindToStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0F885D1AE424490068B03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0F885E1AE424490068B03A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -191,8 +192,8 @@
 		FDF7B00E1AFF863000920388 /* CardEditorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardEditorFactory.h; sourceTree = "<group>"; };
 		FDF7B00F1AFF863000920388 /* CardEditorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardEditorFactory.m; sourceTree = "<group>"; };
 		FDF7B0111AFF9F5900920388 /* CardRemover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardRemover.h; sourceTree = "<group>"; };
-		FDF7B0121AFF9F6700920388 /* CardRemoverImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardRemoverImpl.h; sourceTree = "<group>"; };
-		FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardRemoverImpl.m; sourceTree = "<group>"; };
+		FDF7B0121AFF9F6700920388 /* CardRemoverImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardRemoverImpl.h; path = ../CardRemoverImpl.h; sourceTree = "<group>"; };
+		FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardRemoverImpl.m; path = ../CardRemoverImpl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,9 +332,8 @@
 				FD7706B21AEE6AC700790B7D /* NotificationCenter.h */,
 				FD7706B31AEE6AC700790B7D /* NotificationCenter.m */,
 				FDF7B0111AFF9F5900920388 /* CardRemover.h */,
-				FDF7B0121AFF9F6700920388 /* CardRemoverImpl.h */,
-				FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */,
 				FD8E04091B078050006D9348 /* CardSorter.h */,
+				FD04ED2B1B0D1BBE000D958A /* ModelConstants.h */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -368,6 +368,8 @@
 		FD0F88C61AE42CF30068B03A /* implementations */ = {
 			isa = PBXGroup;
 			children = (
+				FDF7B0121AFF9F6700920388 /* CardRemoverImpl.h */,
+				FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */,
 				FD0F88C71AE42D370068B03A /* CardSaverImplementation.h */,
 				FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */,
 				FD0F88CA1AE42D4F0068B03A /* CardLoaderImplementation.h */,

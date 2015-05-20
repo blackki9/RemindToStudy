@@ -28,7 +28,6 @@
 - (void)setDelegate:(id<CardEditorDelegate>)delegate;
 - (void)removeCard;
 - (void)setCardRemover:(id<CardRemover>)remover;
-
 - (void)setupUIWithContentView:(UIView*)contentView;
 
 @end

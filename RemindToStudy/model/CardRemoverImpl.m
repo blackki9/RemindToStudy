@@ -9,12 +9,17 @@
 #import "CardRemoverImpl.h"
 #import "Card.h"
 #import <NSManagedObject+MagicalRecord.h>
+#import "ModelConstants.h"
 
 @implementation CardRemoverImpl
 
 - (void)removeCard:(Card*)card
 {
     [card MR_deleteEntity];
+    [self sendNotificationThatCardWasDeleted];
 }
-
+- (void)sendNotificationThatCardWasDeleted
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:CARD_WAS_REMOVED_NOTIFICATION object:nil];
+}
 @end

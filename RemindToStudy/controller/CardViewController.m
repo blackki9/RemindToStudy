@@ -8,6 +8,7 @@
 
 #import "CardViewController.h"
 #import <MZFormSheetController.h>
+#import "ModelConstants.h"
 
 @interface CardViewController ()
 
@@ -16,26 +17,6 @@
 @end
 
 @implementation CardViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToUpRecognized:)];
-    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
-    [self.view addGestureRecognizer:swipeRecognizer];
-}
-
-- (void)swipeToUpRecognized:(UISwipeGestureRecognizer*)swipeRecognizer
-{
-    if(swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp)
-    {
-        [self hidePopup];
-    }
-}
-
-- (void)hidePopup
-{
-    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
-}
 
 + (void)showCardPopupWithCardView:(CardView*)cardView
 {
@@ -49,7 +30,7 @@
                                                                     viewController:viewController];
     
     formSheet.portraitTopInset = [self portraitInset];
-
+    
     formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
         // Passing data
     };
@@ -57,16 +38,60 @@
     formSheet.transitionStyle = MZFormSheetTransitionStyleFade;
     [formSheet presentAnimated:YES completionHandler:nil];
 }
-
 + (CGSize)popupSize
 {
     return CGSizeMake(360,
                       600);
 }
-
 + (CGFloat)portraitInset
 {
     return 20.0f;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupUpSwipeRecognizer];
+}
+- (void)setupUpSwipeRecognizer
+{
+    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToUpRecognized:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:swipeRecognizer];
+}
+- (void)swipeToUpRecognized:(UISwipeGestureRecognizer*)swipeRecognizer
+{
+    if(swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp)
+    {
+        [self hidePopup];
+    }
+}
+- (void)hidePopup
+{
+    [self mz_dismissFormSheetControllerAnimated:YES completionHandler:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self registerToNotifications];
+}
+- (void)registerToNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cardWasRemoved:) name:CARD_WAS_REMOVED_NOTIFICATION object:nil];
+}
+- (void)cardWasRemoved:(NSNotification*)notification
+{
+    [self hidePopup];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self deregisterToNotifications];
+}
+- (void)deregisterToNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setupUIWithCardView:(CardView*)cardView
@@ -75,7 +100,5 @@
     self.currentCardView.frame = self.view.bounds;
     [self.view addSubview:cardView];
 }
-
-
 
 @end
