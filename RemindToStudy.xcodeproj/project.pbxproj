@@ -81,6 +81,7 @@
 		6FE4C267658231E28DE0D918 /* libPods-RemindToStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RemindToStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9F000E1FB55B3C738E80D8 /* Pods-RemindToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindToStudy/Pods-RemindToStudy.release.xcconfig"; sourceTree = "<group>"; };
 		FD04ED2B1B0D1BBE000D958A /* ModelConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelConstants.h; sourceTree = "<group>"; };
+		FD05685D1B0F6C56007D0D51 /* EditorsNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditorsNotifications.h; sourceTree = "<group>"; };
 		FD0F88591AE424490068B03A /* RemindToStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindToStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0F885D1AE424490068B03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0F885E1AE424490068B03A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -384,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0F88D41AE42E250068B03A /* editors */,
+				FD05685D1B0F6C56007D0D51 /* EditorsNotifications.h */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";

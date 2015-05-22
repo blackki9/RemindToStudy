@@ -43,10 +43,4 @@
     }
 }
 
-- (void)hideEditButton
-{
-    
-}
-
-
 @end

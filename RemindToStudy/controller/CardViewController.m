@@ -9,6 +9,9 @@
 #import "CardViewController.h"
 #import <MZFormSheetController.h>
 #import "ModelConstants.h"
+#import "EditorsNotifications.h"
+
+#define FORM_PORTRAIT_FROM_TOP_INSET_MARGIN 20.0f
 
 @interface CardViewController ()
 
@@ -20,8 +23,6 @@
 
 + (void)showCardPopupWithCardView:(CardView*)cardView
 {
-    //TODO refactor
-    //TODO make sizes rely on sizes of screen
     CardViewController * viewController = (CardViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"CardViewController"];
     
     [viewController setupUIWithCardView:cardView];
@@ -29,11 +30,7 @@
     MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:[self popupSize]
                                                                     viewController:viewController];
     
-    formSheet.portraitTopInset = [self portraitInset];
-    
-    formSheet.willPresentCompletionHandler = ^(UIViewController *presentedFSViewController) {
-        // Passing data
-    };
+    formSheet.portraitTopInset = FORM_PORTRAIT_FROM_TOP_INSET_MARGIN;
     
     formSheet.transitionStyle = MZFormSheetTransitionStyleFade;
     [formSheet presentAnimated:YES completionHandler:nil];
@@ -43,27 +40,19 @@
     return CGSizeMake(360,
                       600);
 }
-+ (CGFloat)portraitInset
-{
-    return 20.0f;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUpSwipeRecognizer];
 }
 - (void)setupUpSwipeRecognizer
 {
-    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToUpRecognized:)];
-    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
-    [self.view addGestureRecognizer:swipeRecognizer];
+    UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognized:)];
+    tapRecognizer.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tapRecognizer];
 }
-- (void)swipeToUpRecognized:(UISwipeGestureRecognizer*)swipeRecognizer
+- (void)tapRecognized:(UITapGestureRecognizer*)swipeRecognizer
 {
-    if(swipeRecognizer.direction == UISwipeGestureRecognizerDirectionUp)
-    {
-        [self hidePopup];
-    }
+    [self hidePopup];
 }
 - (void)hidePopup
 {
@@ -78,10 +67,19 @@
 - (void)registerToNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cardWasRemoved:) name:CARD_WAS_REMOVED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cardWasEdited:) name:CARD_WAS_EDITED_NOTIFICATION object:nil];
 }
 - (void)cardWasRemoved:(NSNotification*)notification
 {
     [self hidePopup];
+}
+- (void)cardWasEdited:(NSNotification*)notification
+{
+    Card* card = [self cardFromNotification:notification];
+}
+- (Card*)cardFromNotification:(NSNotification*)notification
+{
+    return notification.userInfo[CARD_KEY_IN_USER_INFO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -10,6 +10,7 @@
 #import "TextCard.h"
 #import <PureLayout.h>
 #import "BKTextViewKeyboardHider.h"
+#import "EditorsNotifications.h"
 
 @import UIKit;
 
@@ -91,6 +92,16 @@
     self.currentCard.cardName = cardInfo[@"cardName"]; //TODO change magic string to constant
     [self.currentCard setFireDate:cardInfo[@"fireDate"]];
     [self.currentDelegate saveCard:self.currentCard];
+    
+    [self sendNotificationOfCardWasEdited];
+}
+- (void)sendNotificationOfCardWasEdited
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:CARD_WAS_EDITED_NOTIFICATION object:nil userInfo:[self userInfoForWasEditedNotififation]];
+}
+- (NSDictionary*)userInfoForWasEditedNotififation
+{
+    return @{CARD_KEY_IN_USER_INFO:self.currentCard};
 }
 
 - (void)removeCard
@@ -108,6 +119,5 @@
 {
     self.currentDelegate = delegate;
 }
-
 
 @end

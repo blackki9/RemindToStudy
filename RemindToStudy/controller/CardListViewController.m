@@ -14,8 +14,6 @@
 #import "AddCardPopup.h"
 #import "CardSaverImplementation.h"
 #import "CardAdderFactory.h"
-#import <NSDate+DateTools.h>
-#import "NotificationCenter.h"
 #import "Constants.h"
 #import "CardViewerFactory.h"
 #import "CardViewController.h"
@@ -24,8 +22,6 @@
 #import "CardEditorFactory.h"
 #import "CardSorterImplementation.h"
 #import "CardCarouselDataSource.h"
-
-
 
 @interface CardListViewController ()
 
