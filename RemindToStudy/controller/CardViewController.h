@@ -12,7 +12,6 @@
 @interface CardViewController : UIViewController
 
 + (void)showCardPopupWithCardView:(CardView*)cardView;
-
 - (void)setupUIWithCardView:(CardView*)cardView;
 
 @end

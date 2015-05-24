@@ -11,7 +11,7 @@
 #import "CardEditor.h"
 
 typedef void (^EditButtonAction) (NSInteger cardIndex);
-
+typedef void (^CloseButtonAction) ();
 @interface CardView : UIView
 
 @property (strong, nonatomic) IBOutlet UILabel *cardNameLabel;
@@ -20,7 +20,10 @@ typedef void (^EditButtonAction) (NSInteger cardIndex);
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 @property (nonatomic, assign) NSInteger cardIndex;
 
-- (void)setupViewWithCardViewer:(id<CardViewer>)viewer;
+- (void)setupViewAndClearWithCardViewer:(id<CardViewer>)viewer;
 - (void)setEditButtonAction:(EditButtonAction)action;
+- (void)setCloseButtonAction:(CloseButtonAction)buttonAction;
+
+- (void)showCloseButton;
 
 @end

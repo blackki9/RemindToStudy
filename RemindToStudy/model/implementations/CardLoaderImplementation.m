@@ -23,7 +23,6 @@
     return result;
 }
 
-
 - (Card*)cardForNotificationId:(NSString*)notificationId
 {
     Card* result = [Card MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"notification.notificationId = %@",notificationId]];

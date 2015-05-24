@@ -95,11 +95,11 @@ NSString* const cardViewNibName = @"CardView";
 {
     cardView.cardNameLabel.text = card.cardName;
     cardView.typeLabel.text = [card cardType];
-    cardView.dateLabel.text = [[card fireDate] formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
+    cardView.dateLabel.text = [card formattedFireDate];
     [cardView setEditButtonAction:self.cardViewEditAction];
     
     id<CardViewer> viewer = [CardViewerFactory viewerWithDisabledTouchesForCard:card];
-    [cardView setupViewWithCardViewer:viewer];
+    [cardView setupViewAndClearWithCardViewer:viewer];
     
     return cardView;
 }

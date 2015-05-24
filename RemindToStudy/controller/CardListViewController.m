@@ -9,7 +9,6 @@
 #import "CardListViewController.h"
 #import "GroupCard.h"
 #import "CardView.h"
-#import "CardLoader.h"
 #import "CardLoaderImplementation.h"
 #import "AddCardPopup.h"
 #import "CardSaverImplementation.h"
@@ -28,9 +27,7 @@
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UIView *addFirstCardView;
 @property (nonatomic, strong) GroupCard* baseGroupCard;
-@property (nonatomic, strong) id<CardLoader> loader;
 @property (nonatomic, strong) NSMutableArray* currentCards;
-@property (nonatomic, strong) id<CardSaver> saver;
 @property (nonatomic, strong) Card* currentCardToShow;
 @property (nonatomic, strong) CardCarouselDataSource* dataSource;
 

@@ -52,7 +52,7 @@ CGFloat kRightMargin = 5.0f;
     self.cardTextView = [[UITextView alloc] initWithFrame:frame];
     self.cardTextView.layer.borderWidth = 1.0f;
     self.cardTextView.font = [UIFont systemFontOfSize:20.0f];
-    
+    self.cardTextView.backgroundColor = [UIColor clearColor];
     self.cardTextView = [self.hider addToolbarToTextView:self.cardTextView];
     
     [parentView addSubview:self.cardTextView];

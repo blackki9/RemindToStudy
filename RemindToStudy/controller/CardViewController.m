@@ -10,6 +10,7 @@
 #import <MZFormSheetController.h>
 #import "ModelConstants.h"
 #import "EditorsNotifications.h"
+#import "CardViewerFactory.h"
 
 #define FORM_PORTRAIT_FROM_TOP_INSET_MARGIN 20.0f
 
@@ -29,7 +30,6 @@
     
     MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithSize:[self popupSize]
                                                                     viewController:viewController];
-    
     formSheet.portraitTopInset = FORM_PORTRAIT_FROM_TOP_INSET_MARGIN;
     
     formSheet.transitionStyle = MZFormSheetTransitionStyleFade;
@@ -76,10 +76,18 @@
 - (void)cardWasEdited:(NSNotification*)notification
 {
     Card* card = [self cardFromNotification:notification];
+    [self updateCardViewWithCard:card];
 }
 - (Card*)cardFromNotification:(NSNotification*)notification
 {
     return notification.userInfo[CARD_KEY_IN_USER_INFO];
+}
+- (void)updateCardViewWithCard:(Card*)card
+{
+    [self.currentCardView setupViewAndClearWithCardViewer:[CardViewerFactory viewerForCard:card]];
+    self.currentCardView.cardNameLabel.text = card.cardName;
+    self.currentCardView.typeLabel.text = [card cardType];
+    self.currentCardView.dateLabel.text = [card formattedFireDate];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -96,6 +104,12 @@
 {
     self.currentCardView = cardView;
     self.currentCardView.frame = self.view.bounds;
+    [self.currentCardView showCloseButton];
+    
+    __weak CardViewController* weakSelf = self;
+    [self.currentCardView setCloseButtonAction:^{
+        [weakSelf hidePopup];
+    }];
     [self.view addSubview:cardView];
 }
 

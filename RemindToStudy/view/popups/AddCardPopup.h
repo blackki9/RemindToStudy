@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MZFormSheetController.h>
 #import "BaseCardPopup.h"
+#import "CardAdder.h"
 
-@protocol CardAdder;
-@protocol CardAdderDelegate;
 @protocol CardSaver;
 @class GroupCard;
-
 
 @interface AddCardPopup : BaseCardPopup <CardAdderDelegate>
 

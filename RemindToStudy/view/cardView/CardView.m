@@ -13,7 +13,8 @@
 
 @property (nonatomic, strong) id<CardViewer> currentViewer;
 @property (nonatomic, strong) EditButtonAction currentEditAction;
-
+@property (strong, nonatomic) IBOutlet UIButton *closeButton;
+@property (nonatomic, strong) CloseButtonAction closeAction;
 @end
 
 @implementation CardView
@@ -23,13 +24,24 @@
     self.currentEditAction = action;
 }
 
-- (void)setupViewWithCardViewer:(id<CardViewer>)viewer
+- (void)showCloseButton
+{
+    self.closeButton.hidden = NO;
+}
+- (void)setCloseButtonAction:(CloseButtonAction)buttonAction
+{
+    self.closeAction = buttonAction;
+}
+- (IBAction)closeTapped:(id)sender {
+    self.closeAction();
+}
+
+- (void)setupViewAndClearWithCardViewer:(id<CardViewer>)viewer
 {
     [self clearContent];
     self.currentViewer = viewer;
     [viewer addUIToContentView:self.contentView];
 }
-
 - (void)clearContent
 {
     if(self.currentViewer) {

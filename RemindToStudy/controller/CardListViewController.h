@@ -10,9 +10,13 @@
 #import "iCarousel.h"
 #import <MZFormSheetController.h>
 #import "CardSorter.h"
+#import "CardLoader.h"
+#import "CardSaver.h"
 
 @interface CardListViewController : MZFormSheetController <iCarouselDelegate>
 
 @property (nonatomic, strong) id<CardSorter> sorter;
+@property (nonatomic, strong) id<CardLoader> loader;
+@property (nonatomic, strong) id<CardSaver> saver;
 
 @end

@@ -50,6 +50,12 @@
     self.currentFinishBlock(result);
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.layer.borderWidth = 2.0f;
+}
+
 - (void)hidePopup
 {
     [self.datePopup hidePopup];

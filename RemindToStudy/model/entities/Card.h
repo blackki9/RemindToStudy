@@ -22,6 +22,7 @@
 - (NSString*)cardType;
 
 - (NSDate*)fireDate;
+- (NSString*)formattedFireDate;
 - (void)setFireDate:(NSDate*)fireDate;
 
 @end
