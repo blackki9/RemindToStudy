@@ -11,9 +11,16 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		<key>B96B01CC02C3C0ED7CDD1A0FC49B6216CE5A08E4</key>
 		<string>https://github.com/blackki9/BKNotificationCenter</string>
+		<key>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</key>
+		<string>https://github.com/blackki9/BKNotificationCenter.git</string>
+>>>>>>> developer
+=======
+		<key>C0F99426E3DF3698543FAF2E3EB593A8E6A03641</key>
+		<string>https://github.com/blackki9/KeyboardHiders.git</string>
 		<key>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</key>
 		<string>https://github.com/blackki9/BKNotificationCenter.git</string>
 >>>>>>> developer
@@ -25,9 +32,16 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		<key>B96B01CC02C3C0ED7CDD1A0FC49B6216CE5A08E4</key>
 		<string>../BKNotificationCenter/BKNotificationCenter</string>
+		<key>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</key>
+		<string>../../BKNotificationCenter</string>
+>>>>>>> developer
+=======
+		<key>C0F99426E3DF3698543FAF2E3EB593A8E6A03641</key>
+		<string>../../KeyboardHiders/KeyboardHiders</string>
 		<key>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</key>
 		<string>../../BKNotificationCenter</string>
 >>>>>>> developer
@@ -47,8 +61,12 @@
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			<string>B96B01CC02C3C0ED7CDD1A0FC49B6216CE5A08E4</string>
+=======
+			<string>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</string>
+>>>>>>> developer
 			<key>IDESourceControlWCCName</key>
 			<string>BKNotificationCenter</string>
 		</dict>
@@ -59,6 +77,17 @@
 			<string>C6176C767F7A04D03DD990F5083B9AF27D49BA6D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BKNotificationCenter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
+>>>>>>> developer
+=======
+			<string>C0F99426E3DF3698543FAF2E3EB593A8E6A03641</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KeyboardHiders</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

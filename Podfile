@@ -6,6 +6,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'RemindToStudy' do
 
 pod 'MZFormSheetController'
+pod 'MagicalRecord'
+pod 'PureLayout'
+pod 'DateTools'
 
 end
 

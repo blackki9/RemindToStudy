@@ -9,10 +9,12 @@
 #ifndef RemindToStudy_CardLoader_h
 #define RemindToStudy_CardLoader_h
 @class GroupCard;
+@class Card;
 
 @protocol CardLoader <NSObject>
 
 - (GroupCard*)loadBaseList;
+- (Card*)cardForNotificationId:(NSString*)notificationId;
 
 @end
 

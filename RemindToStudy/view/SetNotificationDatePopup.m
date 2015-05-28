@@ -18,7 +18,7 @@
 
 @implementation SetNotificationDatePopup
 
-+ (void)showPopupWithCompletion:(NotificationSetCompletion)finishBlock
++ (SetNotificationDatePopup*)showPopupWithCompletion:(NotificationSetCompletion)finishBlock
 {
     SetNotificationDatePopup * viewController = (SetNotificationDatePopup*) [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"SetNotificationDatePopup"];
     
@@ -31,15 +31,20 @@
         [viewController setCompletionBlock:finishBlock];
     };
     
-    
     formSheet.transitionStyle = MZFormSheetTransitionStyleSlideAndBounceFromLeft;
     [formSheet presentAnimated:YES completionHandler:nil];
     
+    return viewController;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self limitDatePickerToCurrentDate];
     // Do any additional setup after loading the view from its nib.
+}
+- (void)limitDatePickerToCurrentDate
+{
+    self.datePicker.minimumDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning {

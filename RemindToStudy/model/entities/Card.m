@@ -11,6 +11,7 @@
 #import "Notification.h"
 #import <MagicalRecord.h>
 #import "TextCard.h"
+#import <NSDate+DateTools.h>
 
 @implementation Card
 
@@ -28,5 +29,21 @@
 {
     return nil;
 }
+
+- (NSDate*)fireDate
+{
+    return self.notification.fireDate;
+}
+
+- (NSString*)formattedFireDate
+{
+    return [[self fireDate] formattedDateWithFormat:@"dd/MM/yyyy hh:mm"];
+}
+
+- (void)setFireDate:(NSDate*)fireDate
+{
+    self.notification.fireDate = fireDate;
+}
+
 
 @end

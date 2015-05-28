@@ -9,8 +9,12 @@
 #ifndef RemindToStudy_CardViewer_h
 #define RemindToStudy_CardViewer_h
 
+@import UIKit;
+
 @protocol CardViewer <NSObject>
 
+- (void)addUIToContentView:(UIView*)contentView;
+- (void)clearContentView;
 
 @end
 
