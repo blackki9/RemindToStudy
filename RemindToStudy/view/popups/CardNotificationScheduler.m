@@ -14,9 +14,9 @@
 
 - (Card*)scheduleNotificationForCard:(Card*)card notificationDate:(NSDate*)date
 {
-    return [self setupNotificationForCard:card notificationDate:date];
+    return [self setupNotificationAndScheduleForCard:card notificationDate:date];
 }
-- (Card*)setupNotificationForCard:(Card*)card notificationDate:(NSDate*)date
+- (Card*)setupNotificationAndScheduleForCard:(Card*)card notificationDate:(NSDate*)date
 {
     Card* result = card;
     
@@ -35,7 +35,7 @@
 - (Card*)resheduleNotificationForCard:(Card*)card notificationDate:(NSDate*)date
 {
     [[NotificationCenter sharedCenter] cancelNotification:card.notification];
-    return [self setupNotificationForCard:card notificationDate:date];
+    return [self setupNotificationAndScheduleForCard:card notificationDate:date];
 }
 
 - (NSString*)notificationTextFromCard:(Card*)card
