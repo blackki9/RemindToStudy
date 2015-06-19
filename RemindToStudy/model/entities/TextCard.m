@@ -7,8 +7,7 @@
 //
 
 #import "TextCard.h"
-#import <CoreData+MagicalRecord.h>
-
+#import <MagicalRecord.h>
 
 @implementation TextCard
 
