@@ -13,6 +13,4 @@
 
 @interface TextCardAdder : NSObject <CardAdder>
 
-
-
 @end

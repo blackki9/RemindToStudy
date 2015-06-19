@@ -8,7 +8,7 @@
 
 #import "GroupCard.h"
 #import "Card.h"
-#import <CoreData+MagicalRecord.h>
+#import <MagicalRecord.h>
 
 @implementation GroupCard
 
