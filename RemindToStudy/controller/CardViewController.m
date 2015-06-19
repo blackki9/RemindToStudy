@@ -37,14 +37,15 @@
 }
 + (CGSize)popupSize
 {
+#warning TODO - make size depends on screen size
     return CGSizeMake(360,
                       600);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUpSwipeRecognizer];
+    [self setupTapRecognizer];
 }
-- (void)setupUpSwipeRecognizer
+- (void)setupTapRecognizer
 {
     UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognized:)];
     tapRecognizer.numberOfTapsRequired = 2;

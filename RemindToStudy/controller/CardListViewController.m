@@ -26,13 +26,13 @@
 
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UIView *addFirstCardView;
+
 @property (nonatomic, strong) GroupCard* baseGroupCard;
 @property (nonatomic, strong) NSMutableArray* currentCards;
 @property (nonatomic, strong) Card* currentCardToShow;
 @property (nonatomic, strong) CardCarouselDataSource* dataSource;
 
 @end
-
 
 @implementation CardListViewController
 
@@ -42,8 +42,9 @@
     if (self) {
         _loader = [[CardLoaderImplementation alloc] init];
         _saver = [[CardSaverImplementation alloc] init];
-        _currentCards = [NSMutableArray array];
         _sorter = [[CardSorterImplementation alloc] init];
+        
+        _currentCards = [NSMutableArray array];
         _dataSource = [[CardCarouselDataSource alloc] initWithCards:_currentCards];
     }
     return self;
@@ -95,6 +96,7 @@
         self.addFirstCardView.hidden = NO;
     }
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

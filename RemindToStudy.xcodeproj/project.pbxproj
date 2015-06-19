@@ -26,16 +26,6 @@
 		FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88C81AE42D370068B03A /* CardSaverImplementation.m */; };
 		FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */; };
 		FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F88DA1AE42E460068B03A /* TextCardEditor.m */; };
-		FD54405F1AF3A8DE0068D644 /* BKAlertNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54404E1AF3A8DE0068D644 /* BKAlertNotifier.m */; };
-		FD5440601AF3A8DE0068D644 /* BKNotificationCanceler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440501AF3A8DE0068D644 /* BKNotificationCanceler.m */; };
-		FD5440611AF3A8DE0068D644 /* BKNotificationCenterImp.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440521AF3A8DE0068D644 /* BKNotificationCenterImp.m */; };
-		FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440541AF3A8DE0068D644 /* BKNotificationRefresher.m */; };
-		FD5440631AF3A8DE0068D644 /* BKNotificationScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440561AF3A8DE0068D644 /* BKNotificationScheduler.m */; };
-		FD5440641AF3A8DE0068D644 /* BKNotificationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440581AF3A8DE0068D644 /* BKNotificationUtilities.m */; };
-		FD5440651AF3A8DE0068D644 /* BKSoundNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54405A1AF3A8DE0068D644 /* BKSoundNotifier.m */; };
-		FD5440671AF3A8DE0068D644 /* notification_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = FD54405E1AF3A8DE0068D644 /* notification_sound.caf */; };
-		FD54406E1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54406B1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m */; };
-		FD54406F1AF3A92A0068D644 /* BKTextViewKeyboardHider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54406D1AF3A92A0068D644 /* BKTextViewKeyboardHider.m */; };
 		FD5440731AF40BF20068D644 /* NotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440721AF40BF20068D644 /* NotificationHandler.m */; };
 		FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5440781AF510E30068D644 /* TextCardViewer.m */; };
 		FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FD54407B1AF510F10068D644 /* CardViewerFactory.m */; };
@@ -62,6 +52,15 @@
 		FD8D4C001AE8D767004C3C53 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD8D4BFF1AE8D767004C3C53 /* CardView.xib */; };
 		FD8E040C1B07807F006D9348 /* CardSorterImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E040B1B07807F006D9348 /* CardSorterImplementation.m */; };
 		FD8E04101B08BB90006D9348 /* CardCarouselDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8E040F1B08BB90006D9348 /* CardCarouselDataSource.m */; };
+		FD96F5091B33FC1D00A62A2A /* BKAlertNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F4F61B33FC1D00A62A2A /* BKAlertNotifier.m */; };
+		FD96F50A1B33FC1D00A62A2A /* BKNotificationCanceler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F4F81B33FC1D00A62A2A /* BKNotificationCanceler.m */; };
+		FD96F50B1B33FC1D00A62A2A /* BKNotificationCenterImp.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F4FA1B33FC1D00A62A2A /* BKNotificationCenterImp.m */; };
+		FD96F50C1B33FC1D00A62A2A /* BKNotificationRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F4FC1B33FC1D00A62A2A /* BKNotificationRefresher.m */; };
+		FD96F50D1B33FC1D00A62A2A /* BKNotificationScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F4FE1B33FC1D00A62A2A /* BKNotificationScheduler.m */; };
+		FD96F50E1B33FC1D00A62A2A /* BKNotificationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F5001B33FC1D00A62A2A /* BKNotificationUtilities.m */; };
+		FD96F50F1B33FC1D00A62A2A /* BKSoundNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F5021B33FC1D00A62A2A /* BKSoundNotifier.m */; };
+		FD96F5101B33FC1D00A62A2A /* BKTextFieldKeyboardHider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F5061B33FC1D00A62A2A /* BKTextFieldKeyboardHider.m */; };
+		FD96F5111B33FC1D00A62A2A /* BKTextViewKeyboardHider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F5081B33FC1D00A62A2A /* BKTextViewKeyboardHider.m */; };
 		FDF7B0101AFF863000920388 /* CardEditorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7B00F1AFF863000920388 /* CardEditorFactory.m */; };
 		FDF7B0141AFF9F6700920388 /* CardRemoverImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7B0131AFF9F6700920388 /* CardRemoverImpl.m */; };
 /* End PBXBuildFile section */
@@ -116,27 +115,6 @@
 		FD0F88CB1AE42D4F0068B03A /* CardLoaderImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardLoaderImplementation.m; sourceTree = "<group>"; };
 		FD0F88D91AE42E460068B03A /* TextCardEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardEditor.h; sourceTree = "<group>"; };
 		FD0F88DA1AE42E460068B03A /* TextCardEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardEditor.m; sourceTree = "<group>"; };
-		FD54404B1AF3A8DE0068D644 /* BKNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenter.h; sourceTree = "<group>"; };
-		FD54404D1AF3A8DE0068D644 /* BKAlertNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKAlertNotifier.h; sourceTree = "<group>"; };
-		FD54404E1AF3A8DE0068D644 /* BKAlertNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKAlertNotifier.m; sourceTree = "<group>"; };
-		FD54404F1AF3A8DE0068D644 /* BKNotificationCanceler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCanceler.h; sourceTree = "<group>"; };
-		FD5440501AF3A8DE0068D644 /* BKNotificationCanceler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCanceler.m; sourceTree = "<group>"; };
-		FD5440511AF3A8DE0068D644 /* BKNotificationCenterImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenterImp.h; sourceTree = "<group>"; };
-		FD5440521AF3A8DE0068D644 /* BKNotificationCenterImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCenterImp.m; sourceTree = "<group>"; };
-		FD5440531AF3A8DE0068D644 /* BKNotificationRefresher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationRefresher.h; sourceTree = "<group>"; };
-		FD5440541AF3A8DE0068D644 /* BKNotificationRefresher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationRefresher.m; sourceTree = "<group>"; };
-		FD5440551AF3A8DE0068D644 /* BKNotificationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationScheduler.h; sourceTree = "<group>"; };
-		FD5440561AF3A8DE0068D644 /* BKNotificationScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationScheduler.m; sourceTree = "<group>"; };
-		FD5440571AF3A8DE0068D644 /* BKNotificationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationUtilities.h; sourceTree = "<group>"; };
-		FD5440581AF3A8DE0068D644 /* BKNotificationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationUtilities.m; sourceTree = "<group>"; };
-		FD5440591AF3A8DE0068D644 /* BKSoundNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSoundNotifier.h; sourceTree = "<group>"; };
-		FD54405A1AF3A8DE0068D644 /* BKSoundNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKSoundNotifier.m; sourceTree = "<group>"; };
-		FD54405B1AF3A8DE0068D644 /* Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blocks.h; sourceTree = "<group>"; };
-		FD54405E1AF3A8DE0068D644 /* notification_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification_sound.caf; sourceTree = "<group>"; };
-		FD54406A1AF3A92A0068D644 /* BKTextFieldKeyboardHider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTextFieldKeyboardHider.h; sourceTree = "<group>"; };
-		FD54406B1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTextFieldKeyboardHider.m; sourceTree = "<group>"; };
-		FD54406C1AF3A92A0068D644 /* BKTextViewKeyboardHider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTextViewKeyboardHider.h; sourceTree = "<group>"; };
-		FD54406D1AF3A92A0068D644 /* BKTextViewKeyboardHider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTextViewKeyboardHider.m; sourceTree = "<group>"; };
 		FD5440711AF40BF20068D644 /* NotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationHandler.h; sourceTree = "<group>"; };
 		FD5440721AF40BF20068D644 /* NotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHandler.m; sourceTree = "<group>"; };
 		FD5440741AF40ED60068D644 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -190,6 +168,26 @@
 		FD8E040B1B07807F006D9348 /* CardSorterImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSorterImplementation.m; sourceTree = "<group>"; };
 		FD8E040E1B08BB90006D9348 /* CardCarouselDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCarouselDataSource.h; sourceTree = "<group>"; };
 		FD8E040F1B08BB90006D9348 /* CardCarouselDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCarouselDataSource.m; sourceTree = "<group>"; };
+		FD96F4F31B33FC1D00A62A2A /* BKNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenter.h; sourceTree = "<group>"; };
+		FD96F4F51B33FC1D00A62A2A /* BKAlertNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKAlertNotifier.h; sourceTree = "<group>"; };
+		FD96F4F61B33FC1D00A62A2A /* BKAlertNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKAlertNotifier.m; sourceTree = "<group>"; };
+		FD96F4F71B33FC1D00A62A2A /* BKNotificationCanceler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCanceler.h; sourceTree = "<group>"; };
+		FD96F4F81B33FC1D00A62A2A /* BKNotificationCanceler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCanceler.m; sourceTree = "<group>"; };
+		FD96F4F91B33FC1D00A62A2A /* BKNotificationCenterImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationCenterImp.h; sourceTree = "<group>"; };
+		FD96F4FA1B33FC1D00A62A2A /* BKNotificationCenterImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationCenterImp.m; sourceTree = "<group>"; };
+		FD96F4FB1B33FC1D00A62A2A /* BKNotificationRefresher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationRefresher.h; sourceTree = "<group>"; };
+		FD96F4FC1B33FC1D00A62A2A /* BKNotificationRefresher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationRefresher.m; sourceTree = "<group>"; };
+		FD96F4FD1B33FC1D00A62A2A /* BKNotificationScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationScheduler.h; sourceTree = "<group>"; };
+		FD96F4FE1B33FC1D00A62A2A /* BKNotificationScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationScheduler.m; sourceTree = "<group>"; };
+		FD96F4FF1B33FC1D00A62A2A /* BKNotificationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNotificationUtilities.h; sourceTree = "<group>"; };
+		FD96F5001B33FC1D00A62A2A /* BKNotificationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNotificationUtilities.m; sourceTree = "<group>"; };
+		FD96F5011B33FC1D00A62A2A /* BKSoundNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSoundNotifier.h; sourceTree = "<group>"; };
+		FD96F5021B33FC1D00A62A2A /* BKSoundNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKSoundNotifier.m; sourceTree = "<group>"; };
+		FD96F5031B33FC1D00A62A2A /* Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blocks.h; sourceTree = "<group>"; };
+		FD96F5051B33FC1D00A62A2A /* BKTextFieldKeyboardHider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTextFieldKeyboardHider.h; sourceTree = "<group>"; };
+		FD96F5061B33FC1D00A62A2A /* BKTextFieldKeyboardHider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTextFieldKeyboardHider.m; sourceTree = "<group>"; };
+		FD96F5071B33FC1D00A62A2A /* BKTextViewKeyboardHider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTextViewKeyboardHider.h; sourceTree = "<group>"; };
+		FD96F5081B33FC1D00A62A2A /* BKTextViewKeyboardHider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTextViewKeyboardHider.m; sourceTree = "<group>"; };
 		FDF7B00E1AFF863000920388 /* CardEditorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardEditorFactory.h; sourceTree = "<group>"; };
 		FDF7B00F1AFF863000920388 /* CardEditorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardEditorFactory.m; sourceTree = "<group>"; };
 		FDF7B0111AFF9F5900920388 /* CardRemover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardRemover.h; sourceTree = "<group>"; };
@@ -401,82 +399,6 @@
 			path = editors;
 			sourceTree = "<group>";
 		};
-		FD5440151AF3916F0068D644 /* keyboardHider */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = keyboardHider;
-			sourceTree = "<group>";
-		};
-		FD5440491AF3A8C00068D644 /* notifications */ = {
-			isa = PBXGroup;
-			children = (
-				FD54404A1AF3A8DE0068D644 /* BKNotificationCenter */,
-			);
-			name = notifications;
-			sourceTree = "<group>";
-		};
-		FD54404A1AF3A8DE0068D644 /* BKNotificationCenter */ = {
-			isa = PBXGroup;
-			children = (
-				FD54404B1AF3A8DE0068D644 /* BKNotificationCenter.h */,
-				FD54404C1AF3A8DE0068D644 /* implementation */,
-				FD54405D1AF3A8DE0068D644 /* Resources */,
-			);
-			name = BKNotificationCenter;
-			path = ../../../BKNotificationCenter/BKNotificationCenter/BKNotificationCenter;
-			sourceTree = "<group>";
-		};
-		FD54404C1AF3A8DE0068D644 /* implementation */ = {
-			isa = PBXGroup;
-			children = (
-				FD54404D1AF3A8DE0068D644 /* BKAlertNotifier.h */,
-				FD54404E1AF3A8DE0068D644 /* BKAlertNotifier.m */,
-				FD54404F1AF3A8DE0068D644 /* BKNotificationCanceler.h */,
-				FD5440501AF3A8DE0068D644 /* BKNotificationCanceler.m */,
-				FD5440511AF3A8DE0068D644 /* BKNotificationCenterImp.h */,
-				FD5440521AF3A8DE0068D644 /* BKNotificationCenterImp.m */,
-				FD5440531AF3A8DE0068D644 /* BKNotificationRefresher.h */,
-				FD5440541AF3A8DE0068D644 /* BKNotificationRefresher.m */,
-				FD5440551AF3A8DE0068D644 /* BKNotificationScheduler.h */,
-				FD5440561AF3A8DE0068D644 /* BKNotificationScheduler.m */,
-				FD5440571AF3A8DE0068D644 /* BKNotificationUtilities.h */,
-				FD5440581AF3A8DE0068D644 /* BKNotificationUtilities.m */,
-				FD5440591AF3A8DE0068D644 /* BKSoundNotifier.h */,
-				FD54405A1AF3A8DE0068D644 /* BKSoundNotifier.m */,
-				FD54405B1AF3A8DE0068D644 /* Blocks.h */,
-			);
-			path = implementation;
-			sourceTree = "<group>";
-		};
-		FD54405D1AF3A8DE0068D644 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FD54405E1AF3A8DE0068D644 /* notification_sound.caf */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FD5440681AF3A91A0068D644 /* hiders */ = {
-			isa = PBXGroup;
-			children = (
-				FD5440691AF3A92A0068D644 /* KeyboardHiders */,
-			);
-			name = hiders;
-			sourceTree = "<group>";
-		};
-		FD5440691AF3A92A0068D644 /* KeyboardHiders */ = {
-			isa = PBXGroup;
-			children = (
-				FD54406A1AF3A92A0068D644 /* BKTextFieldKeyboardHider.h */,
-				FD54406B1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m */,
-				FD54406C1AF3A92A0068D644 /* BKTextViewKeyboardHider.h */,
-				FD54406D1AF3A92A0068D644 /* BKTextViewKeyboardHider.m */,
-			);
-			name = KeyboardHiders;
-			path = ../../../KeyboardHiders/KeyboardHiders;
-			sourceTree = "<group>";
-		};
 		FD5440701AF40BBB0068D644 /* notificationHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,9 +473,8 @@
 		FD7AB2D91AE8CE16005A4F4B /* thirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				FD5440681AF3A91A0068D644 /* hiders */,
-				FD5440491AF3A8C00068D644 /* notifications */,
-				FD5440151AF3916F0068D644 /* keyboardHider */,
+				FD96F4F21B33FC1D00A62A2A /* BKNotificationCenter */,
+				FD96F5041B33FC1D00A62A2A /* KeyboardHiders */,
 				FD7AB2DA1AE8CE16005A4F4B /* iCarousel */,
 			);
 			path = thirdParty;
@@ -585,6 +506,48 @@
 				FD8E040F1B08BB90006D9348 /* CardCarouselDataSource.m */,
 			);
 			path = carouselDataSource;
+			sourceTree = "<group>";
+		};
+		FD96F4F21B33FC1D00A62A2A /* BKNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				FD96F4F31B33FC1D00A62A2A /* BKNotificationCenter.h */,
+				FD96F4F41B33FC1D00A62A2A /* implementation */,
+			);
+			path = BKNotificationCenter;
+			sourceTree = "<group>";
+		};
+		FD96F4F41B33FC1D00A62A2A /* implementation */ = {
+			isa = PBXGroup;
+			children = (
+				FD96F4F51B33FC1D00A62A2A /* BKAlertNotifier.h */,
+				FD96F4F61B33FC1D00A62A2A /* BKAlertNotifier.m */,
+				FD96F4F71B33FC1D00A62A2A /* BKNotificationCanceler.h */,
+				FD96F4F81B33FC1D00A62A2A /* BKNotificationCanceler.m */,
+				FD96F4F91B33FC1D00A62A2A /* BKNotificationCenterImp.h */,
+				FD96F4FA1B33FC1D00A62A2A /* BKNotificationCenterImp.m */,
+				FD96F4FB1B33FC1D00A62A2A /* BKNotificationRefresher.h */,
+				FD96F4FC1B33FC1D00A62A2A /* BKNotificationRefresher.m */,
+				FD96F4FD1B33FC1D00A62A2A /* BKNotificationScheduler.h */,
+				FD96F4FE1B33FC1D00A62A2A /* BKNotificationScheduler.m */,
+				FD96F4FF1B33FC1D00A62A2A /* BKNotificationUtilities.h */,
+				FD96F5001B33FC1D00A62A2A /* BKNotificationUtilities.m */,
+				FD96F5011B33FC1D00A62A2A /* BKSoundNotifier.h */,
+				FD96F5021B33FC1D00A62A2A /* BKSoundNotifier.m */,
+				FD96F5031B33FC1D00A62A2A /* Blocks.h */,
+			);
+			path = implementation;
+			sourceTree = "<group>";
+		};
+		FD96F5041B33FC1D00A62A2A /* KeyboardHiders */ = {
+			isa = PBXGroup;
+			children = (
+				FD96F5051B33FC1D00A62A2A /* BKTextFieldKeyboardHider.h */,
+				FD96F5061B33FC1D00A62A2A /* BKTextFieldKeyboardHider.m */,
+				FD96F5071B33FC1D00A62A2A /* BKTextViewKeyboardHider.h */,
+				FD96F5081B33FC1D00A62A2A /* BKTextViewKeyboardHider.m */,
+			);
+			path = KeyboardHiders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,7 +635,6 @@
 				FD0F88681AE424490068B03A /* Main.storyboard in Resources */,
 				FD0F886D1AE424490068B03A /* LaunchScreen.xib in Resources */,
 				FD8D4C001AE8D767004C3C53 /* CardView.xib in Resources */,
-				FD5440671AF3A8DE0068D644 /* notification_sound.caf in Resources */,
 				FD0F886A1AE424490068B03A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,25 +686,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD96F50E1B33FC1D00A62A2A /* BKNotificationUtilities.m in Sources */,
 				FD5440791AF510E30068D644 /* TextCardViewer.m in Sources */,
 				FD54408C1AF910270068D644 /* CardNotificationScheduler.m in Sources */,
-				FD5440621AF3A8DE0068D644 /* BKNotificationRefresher.m in Sources */,
+				FD96F50F1B33FC1D00A62A2A /* BKSoundNotifier.m in Sources */,
+				FD96F5101B33FC1D00A62A2A /* BKTextFieldKeyboardHider.m in Sources */,
 				FD0F88B11AE429420068B03A /* SetNotificationDatePopup.m in Sources */,
 				FD8E040C1B07807F006D9348 /* CardSorterImplementation.m in Sources */,
 				FD8E04101B08BB90006D9348 /* CardCarouselDataSource.m in Sources */,
 				FD54407F1AF551A70068D644 /* DisabledTouchesTextCardViewer.m in Sources */,
 				FD7AB2C71AE81E95005A4F4B /* AudioCard.m in Sources */,
 				FD0F88C91AE42D370068B03A /* CardSaverImplementation.m in Sources */,
-				FD5440601AF3A8DE0068D644 /* BKNotificationCanceler.m in Sources */,
 				FD7AB2C81AE81E95005A4F4B /* Card.m in Sources */,
-				FD5440611AF3A8DE0068D644 /* BKNotificationCenterImp.m in Sources */,
-				FD54406E1AF3A92A0068D644 /* BKTextFieldKeyboardHider.m in Sources */,
 				FD0F888B1AE425220068B03A /* CardViewController.m in Sources */,
 				FD5440891AF908330068D644 /* BaseCardPopup.m in Sources */,
-				FD54406F1AF3A92A0068D644 /* BKTextViewKeyboardHider.m in Sources */,
 				FD7AB2CC1AE81E95005A4F4B /* PDFCard.m in Sources */,
+				FD96F50B1B33FC1D00A62A2A /* BKNotificationCenterImp.m in Sources */,
+				FD96F50A1B33FC1D00A62A2A /* BKNotificationCanceler.m in Sources */,
 				FD0F88881AE424DA0068B03A /* CardListViewController.m in Sources */,
-				FD5440641AF3A8DE0068D644 /* BKNotificationUtilities.m in Sources */,
 				FD7AB2D21AE81EB0005A4F4B /* TextCardAdder.m in Sources */,
 				FD7AB2CA1AE81E95005A4F4B /* LinkCard.m in Sources */,
 				FD7AB2DD1AE8CE16005A4F4B /* iCarousel.m in Sources */,
@@ -750,6 +711,7 @@
 				FDF7B0101AFF863000920388 /* CardEditorFactory.m in Sources */,
 				FD7AB2821AE81392005A4F4B /* DBManager.m in Sources */,
 				FD7AB2CD1AE81E95005A4F4B /* TextCard.m in Sources */,
+				FD96F50D1B33FC1D00A62A2A /* BKNotificationScheduler.m in Sources */,
 				FD7706B41AEE6AC700790B7D /* NotificationCenter.m in Sources */,
 				FD0F88DB1AE42E460068B03A /* TextCardEditor.m in Sources */,
 				FD7AB2CB1AE81E95005A4F4B /* Notification.m in Sources */,
@@ -757,18 +719,18 @@
 				FD5440851AF648680068D644 /* AddCardPopup.m in Sources */,
 				FD0F88621AE424490068B03A /* AppDelegate.m in Sources */,
 				FD54407C1AF510F10068D644 /* CardViewerFactory.m in Sources */,
-				FD5440651AF3A8DE0068D644 /* BKSoundNotifier.m in Sources */,
-				FD5440631AF3A8DE0068D644 /* BKNotificationScheduler.m in Sources */,
 				FD8D4BFE1AE8D74F004C3C53 /* CardView.m in Sources */,
 				FD0F888E1AE425E40068B03A /* RemindToStudy.xcdatamodeld in Sources */,
 				FD7AB2B51AE81657005A4F4B /* CardsFactory.m in Sources */,
 				FD7AB2C91AE81E95005A4F4B /* GroupCard.m in Sources */,
 				FD7AB2CE1AE81E95005A4F4B /* VideoCard.m in Sources */,
 				FD0F88CC1AE42D4F0068B03A /* CardLoaderImplementation.m in Sources */,
+				FD96F5091B33FC1D00A62A2A /* BKAlertNotifier.m in Sources */,
 				FDF7B0141AFF9F6700920388 /* CardRemoverImpl.m in Sources */,
 				FD0F885F1AE424490068B03A /* main.m in Sources */,
+				FD96F50C1B33FC1D00A62A2A /* BKNotificationRefresher.m in Sources */,
+				FD96F5111B33FC1D00A62A2A /* BKTextViewKeyboardHider.m in Sources */,
 				FD7AB2D81AE8C6D7005A4F4B /* CardAdderFactory.m in Sources */,
-				FD54405F1AF3A8DE0068D644 /* BKAlertNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
