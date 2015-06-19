@@ -11,12 +11,10 @@
 #import "DBManager.h"
 #import "NotificationHandler.h"
 
-<<<<<<< HEAD
-=======
+
 NSString* const showButtonTitle = @"Show card";
 const int showButtonIndex = 1;
 
->>>>>>> developer
 @interface NotificationCenter()
 
 @property (nonatomic,strong) NotificationHandler* currentNotificationHandler;
@@ -91,13 +89,10 @@ const int showButtonIndex = 1;
 {
     __weak NotificationCenter* weakSelf = self;
     [[BKNotificationCenterImp sharedCenter] setCompletitionHandler:^(NSInteger buttonIndex, NSString *notificationId) {
-<<<<<<< HEAD
-        [weakSelf.currentNotificationHandler handleNotificationWithId:notificationId];
-=======
+
         if(buttonIndex == showButtonIndex) {
             [weakSelf.currentNotificationHandler handleNotificationWithId:notificationId];
         }
->>>>>>> developer
     }];
 }
 

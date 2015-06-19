@@ -23,10 +23,7 @@ CGFloat kRightMargin = 5.0f;
 
 @property (nonatomic,strong) UITextView* cardTextView;
 @property (nonatomic,strong) BKTextViewKeyboardHider* hider;
-<<<<<<< HEAD
-=======
 
->>>>>>> developer
 @end
 
 @implementation TextCardAdder
@@ -58,11 +55,6 @@ CGFloat kRightMargin = 5.0f;
     self.cardTextView.backgroundColor = [UIColor clearColor];
     self.cardTextView = [self.hider addToolbarToTextView:self.cardTextView];
     
-<<<<<<< HEAD
-    self.cardTextView = [self.hider addToolbarToTextView:self.cardTextView];
-    
-=======
->>>>>>> developer
     [parentView addSubview:self.cardTextView];
 }
 

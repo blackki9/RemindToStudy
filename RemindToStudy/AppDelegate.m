@@ -10,13 +10,11 @@
 #import "DBManager.h"
 #import "NotificationCenter.h"
 #import "NotificationHandler.h"
-<<<<<<< HEAD
+
 
 @interface AppDelegate ()
 
 @end
-=======
->>>>>>> developer
 
 @implementation AppDelegate
 
@@ -27,11 +25,7 @@
     [[NotificationCenter sharedCenter] initializeWithApplication:application];
     [[NotificationCenter sharedCenter] setNotificationHandler:[self handlerForNotifications]];
     
-<<<<<<< HEAD
-    [[NotificationCenter sharedCenter] setNotificationHandler:[self handlerForNotifications]];
-=======
     [self injectCardManagersToListController];
->>>>>>> developer
     
     return YES;
 }
@@ -52,17 +46,6 @@
     UINavigationController* navController = [storyboard instantiateInitialViewController];
     
     return navController;
-}
-
-- (NotificationHandler*)handlerForNotifications
-{
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UINavigationController* navController = [storyboard instantiateInitialViewController];
-    
-    NotificationHandler* handler = [[NotificationHandler alloc] init];
-    [handler setNavigationController:navController];
-    
-    return handler;
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
