@@ -33,7 +33,6 @@
     
     localNotification.fireDate = fireDate;
     localNotification.alertBody = message;
-    localNotification.alertTitle = [self.utilities appName];
     localNotification.userInfo = [self userInfoForLocalNotificationWithInfo:userInfo key:key];
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
